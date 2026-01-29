@@ -3,8 +3,11 @@
     {"name":"Assets","order":2,"path":"folders/Assets.yy",},
     {"name":"Sounds","order":2,"path":"folders/Assets/Sounds.yy",},
     {"name":"Sprites","order":1,"path":"folders/Assets/Sprites.yy",},
-    {"name":"Rooms","order":3,"path":"folders/Rooms.yy",},
     {"name":"Objects","order":1,"path":"folders/Objects.yy",},
+    {"name":"Rooms","order":3,"path":"folders/Rooms.yy",},
   ],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"obj_placeholdertile","order":1,"path":"objects/obj_placeholdertile/obj_placeholdertile.yy",},
+    {"name":"spr_placeholdertile","order":1,"path":"sprites/spr_placeholdertile/spr_placeholdertile.yy",},
+  ],
 }
