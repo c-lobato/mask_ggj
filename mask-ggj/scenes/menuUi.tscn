@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbvw1mnp2mq3s"]
+[gd_scene load_steps=9 format=3 uid="uid://bbvw1mnp2mq3s"]
 
 [ext_resource type="Texture2D" uid="uid://biq6qs4fqsr4n" path="res://assets/background_temp_vector.svg" id="1_1qdl6"]
+[ext_resource type="Script" uid="uid://ctih1vukojomd" path="res://scripts/MenuUi.cs" id="1_p1a5y"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p1a5y"]
 texture = ExtResource("1_1qdl6")
@@ -44,6 +45,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_p1a5y")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -108,3 +110,6 @@ text = "Temporary Title
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="onStartPressed"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="onExitPressed"]
