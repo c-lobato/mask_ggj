@@ -1,15 +1,69 @@
 [gd_scene format=3 uid="uid://cesem8hm7ndis"]
 
-[ext_resource type="Texture2D" uid="uid://crobcayq6vgi0" path="res://icon.svg" id="1_vlwrh"]
+[ext_resource type="Texture2D" uid="uid://cx8qftd2pp15p" path="res://assets/sprites/nuvem5.png" id="1_vlwrh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2kyfr"]
-size = Vector2(129, 128)
+size = Vector2(62, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kyfr"]
+atlas = ExtResource("1_vlwrh")
+region = Rect2(0, 0, 65, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1qj5"]
+atlas = ExtResource("1_vlwrh")
+region = Rect2(65, 0, 65, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fubt3"]
+atlas = ExtResource("1_vlwrh")
+region = Rect2(130, 0, 65, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sk0fm"]
+atlas = ExtResource("1_vlwrh")
+region = Rect2(195, 0, 65, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6omnh"]
+atlas = ExtResource("1_vlwrh")
+region = Rect2(260, 0, 65, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ky362"]
+atlas = ExtResource("1_vlwrh")
+region = Rect2(325, 0, 65, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7oeba"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kyfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1qj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fubt3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sk0fm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6omnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ky362")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
 
 [node name="Cloud" type="AnimatableBody2D" unique_id=22462759]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2122145420]
-texture = ExtResource("1_vlwrh")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1517252396]
-position = Vector2(-0.5, 0)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_2kyfr")
+one_way_collision = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1626568550]
+sprite_frames = SubResource("SpriteFrames_7oeba")
+autoplay = "default"
+frame = 3
+frame_progress = 0.9849609

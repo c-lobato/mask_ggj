@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bugmowx8w2m8g"]
+
+[ext_resource type="Texture2D" uid="uid://cgibubbgr5pjw" path="res://assets/sprites/NuvemdouradaAnim.png" id="1_gbyq8"]
+[ext_resource type="Script" uid="uid://mmw2lngohggi" path="res://scripts/BouncingCloud.cs" id="1_hxhet"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hxhet"]
+size = Vector2(64, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8iln8"]
+atlas = ExtResource("1_gbyq8")
+region = Rect2(0, 0, 66, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4img"]
+atlas = ExtResource("1_gbyq8")
+region = Rect2(66, 0, 66, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtycm"]
+atlas = ExtResource("1_gbyq8")
+region = Rect2(132, 0, 66, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqfyu"]
+atlas = ExtResource("1_gbyq8")
+region = Rect2(198, 0, 66, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0x3n"]
+atlas = ExtResource("1_gbyq8")
+region = Rect2(264, 0, 66, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0iyc2"]
+atlas = ExtResource("1_gbyq8")
+region = Rect2(330, 0, 66, 23)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lm2bb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8iln8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4img")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtycm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqfyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0x3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0iyc2")
+}],
+"loop": false,
+"name": &"bounce",
+"speed": 14.0
+}]
+
+[node name="BouncingCloud" type="Area2D" unique_id=2055192752 node_paths=PackedStringArray("Animation")]
+script = ExtResource("1_hxhet")
+Animation = NodePath("AnimatedSprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=826038757]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_hxhet")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1674156540]
+sprite_frames = SubResource("SpriteFrames_lm2bb")
+animation = &"bounce"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
