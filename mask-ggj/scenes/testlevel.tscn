@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cib1dpd0sype"]
+
+[ext_resource type="PackedScene" uid="uid://cesem8hm7ndis" path="res://scenes/cloud.tscn" id="2_6ewva"]
+[ext_resource type="PackedScene" uid="uid://b8f2arpts6uog" path="res://scenes/terra.tscn" id="2_jiwm1"]
+
+[sub_resource type="Animation" id="Animation_6ewva"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(468, 295)]
+}
+
+[sub_resource type="Animation" id="Animation_jiwm1"]
+resource_name = "hover"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(468, 295), Vector2(883, 307)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6kl7x"]
+_data = {
+&"RESET": SubResource("Animation_6ewva"),
+&"hover": SubResource("Animation_jiwm1")
+}
+
+[node name="Node2D" type="Node2D" unique_id=224837685]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1632572956]
+position = Vector2(461, 209)
+zoom = Vector2(3, 3)
+
+[node name="Terra" parent="." unique_id=430751878 instance=ExtResource("2_jiwm1")]
+position = Vector2(461, 209)
+
+[node name="Cloud" parent="." unique_id=22462759 instance=ExtResource("2_6ewva")]
+position = Vector2(468, 295)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cloud" unique_id=1595773137]
+libraries/ = SubResource("AnimationLibrary_6kl7x")

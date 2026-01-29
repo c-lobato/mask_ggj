@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Numerics;
 
 public partial class IdleState : State
 {
@@ -12,10 +13,15 @@ public partial class IdleState : State
 
     public override void PhysicsUpdate(double delta)
     {
+		var Vel = Character.Velocity;
+		Vel.Y = 0;
+		Vel.X = 0;
 		if (!Character.IsOnFloor())
 		{
 			StateMachine.ChangeState("fallstate");
 		}
+		Character.Velocity = Vel;
+		Character.MoveAndSlide();
     }
 
 

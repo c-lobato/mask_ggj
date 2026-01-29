@@ -10,7 +10,7 @@ public partial class FallState : State
 
     public override void Enter()
     {
-        // Terra.AnimationPlayer("fallstate");
+        Terra.AnimationPlayer("fallstate");
     }
 
 

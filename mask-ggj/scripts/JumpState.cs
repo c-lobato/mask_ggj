@@ -11,7 +11,7 @@ public partial class JumpState : State
     public override void Enter()
     {
 		// Terra.PlayEffect(Terra.PlayerEffect.JumpEffect);
-		// Terra.AnimationPlayer("jumpstate");
+		Terra.AnimationPlayer("jumpstate");
 		var Vel = Character.Velocity;
 		Vel.Y = JumpSpeed;
 		Character.Velocity = Vel;
