@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://djcurrxkbphw5" path="res://assets/tiles/tile.png" id="1_p866x"]
 [ext_resource type="PackedScene" uid="uid://b8f2arpts6uog" path="res://scenes/terra.tscn" id="2_7w5b6"]
+[ext_resource type="PackedScene" uid="uid://bugmowx8w2m8g" path="res://scenes/bouncing_cloud.tscn" id="3_dpmm0"]
+[ext_resource type="PackedScene" uid="uid://cesem8hm7ndis" path="res://scenes/cloud.tscn" id="4_r7t3j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dpmm0"]
 texture = ExtResource("1_p866x")
@@ -14,13 +16,215 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_dpmm0")
 
+[sub_resource type="Animation" id="Animation_dpmm0"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(323, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_r7t3j"]
+resource_name = "hover"
+length = 4.0
+loop_mode = 2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(323, -0.25, 0, 0.25, 0, 71, -0.43333328, 1.5, 0, 0),
+"times": PackedFloat32Array(0, 4)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jwy3e"]
+_data = {
+&"RESET": SubResource("Animation_dpmm0"),
+&"hover": SubResource("Animation_r7t3j")
+}
+
+[sub_resource type="Animation" id="Animation_jwy3e"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(325, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_rqfva"]
+resource_name = "hover2"
+length = 3.0
+loop_mode = 2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(325, -0.25, 0, 0.25, 0, 11, -0.5, 1.5, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8v7sy"]
+_data = {
+&"RESET": SubResource("Animation_jwy3e"),
+&"hover2": SubResource("Animation_rqfva")
+}
+
+[sub_resource type="Animation" id="Animation_8v7sy"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-91, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_tqg3p"]
+resource_name = "hover3"
+length = 3.0
+loop_mode = 2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-91, -0.25, 0, 0.25, 0, -344, -0.5333333, 0.5, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dnye5"]
+_data = {
+&"RESET": SubResource("Animation_8v7sy"),
+&"hover3": SubResource("Animation_tqg3p")
+}
+
+[sub_resource type="Animation" id="Animation_dnye5"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(2140, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_yc46s"]
+resource_name = "hover4"
+length = 4.0
+loop_mode = 2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 2),
+"points": PackedFloat32Array(2140, -0.25, 0, 0.3, 0, 2140, 0, 0, 0, 0, 2340, 0, 0, 0.16666675, 0, 2340, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1, 3, 4)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xn41m"]
+_data = {
+&"RESET": SubResource("Animation_dnye5"),
+&"hover4": SubResource("Animation_yc46s")
+}
+
 [node name="LevelAir" type="Node2D" unique_id=906813541]
 
 [node name="Tiles" type="Node2D" parent="." unique_id=803337918]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Tiles" unique_id=402304345]
-tile_map_data = PackedByteArray("AAAGAAoAAAAAAAAAAAAHAAoAAAAAAAAAAAAIAAoAAAAAAAAAAAAJAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAALAAoAAAAAAAAAAAAMAAoAAAAAAAAAAAANAAoAAAAAAAAAAAAMAAsAAAAAAAAAAAALAAsAAAAAAAAAAAAKAAsAAAAAAAAAAAAJAAsAAAAAAAAAAAAIAAsAAAAAAAAAAAAHAAsAAAAAAAAAAAAUAAQAAAAAAAAAAAATAAQAAAAAAAAAAAAVAAQAAAAAAAAAAAAWAAQAAAAAAAAAAAAXAAQAAAAAAAAAAAAYAAQAAAAAAAAAAAAZAAQAAAAAAAAAAAAaAAQAAAAAAAAAAAAVAAUAAAAAAAAAAAAWAAUAAAAAAAAAAAAXAAUAAAAAAAAAAAAYAAUAAAAAAAAAAAAZAAUAAAAAAAAAAAAUAAUAAAAAAAAAAAAwAAQAAAAAAAAAAAAxAAQAAAAAAAAAAAAyAAQAAAAAAAAAAAAzAAQAAAAAAAAAAAA0AAQAAAAAAAAAAAA1AAQAAAAAAAAAAAA2AAQAAAAAAAAAAAAxAAUAAAAAAAAAAAAyAAUAAAAAAAAAAAAzAAUAAAAAAAAAAAA0AAUAAAAAAAAAAAA1AAUAAAAAAAAAAAA2AAUAAAAAAAAAAAA3AAQAAAAAAAAAAABCAPf/AAAAAAAAAABDAPf/AAAAAAAAAABEAPf/AAAAAAAAAABFAPf/AAAAAAAAAABGAPf/AAAAAAAAAABHAPf/AAAAAAAAAABIAPf/AAAAAAAAAABJAPf/AAAAAAAAAABKAPf/AAAAAAAAAABDAPj/AAAAAAAAAABEAPj/AAAAAAAAAABFAPj/AAAAAAAAAABGAPj/AAAAAAAAAABHAPj/AAAAAAAAAABIAPj/AAAAAAAAAABJAPj/AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAJAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAALAAoAAAAAAAAAAAAIAAoAAAAAAAAAAAAJAAsAAAAAAAAAAAAKAAsAAAAAAAAAAAAHAAoAAAAAAAAAAAAMAAoAAAAAAAAAAAAIAAsAAAAAAAAAAAALAAsAAAAAAAAAAAASAAIAAAAAAAAAAAATAAIAAAAAAAAAAAAUAAIAAAAAAAAAAAAVAAIAAAAAAAAAAAAWAAIAAAAAAAAAAAAXAAIAAAAAAAAAAAATAAMAAAAAAAAAAAAUAAMAAAAAAAAAAAAVAAMAAAAAAAAAAAAWAAMAAAAAAAAAAAAqAAoAAAAAAAAAAAArAAoAAAAAAAAAAAAsAAoAAAAAAAAAAAAtAAoAAAAAAAAAAAAuAAoAAAAAAAAAAAAvAAoAAAAAAAAAAAArAAsAAAAAAAAAAAAsAAsAAAAAAAAAAAAtAAsAAAAAAAAAAAAuAAsAAAAAAAAAAAA6APL/AAAAAAAAAAA7APL/AAAAAAAAAAA8APL/AAAAAAAAAAA9APL/AAAAAAAAAAA+APL/AAAAAAAAAAA/APL/AAAAAAAAAABAAPL/AAAAAAAAAAA7APP/AAAAAAAAAAA8APP/AAAAAAAAAAA9APP/AAAAAAAAAAA+APP/AAAAAAAAAAA/APP/AAAAAAAAAABQAPL/AAAAAAAAAABRAPL/AAAAAAAAAABSAPL/AAAAAAAAAABTAPL/AAAAAAAAAABUAPL/AAAAAAAAAABVAPL/AAAAAAAAAABWAPL/AAAAAAAAAABRAPP/AAAAAAAAAABSAPP/AAAAAAAAAABTAPP/AAAAAAAAAABUAPP/AAAAAAAAAABVAPP/AAAAAAAAAABfAO3/AAAAAAAAAABgAO3/AAAAAAAAAABhAO3/AAAAAAAAAABiAO3/AAAAAAAAAABjAO3/AAAAAAAAAABkAO3/AAAAAAAAAABjAO7/AAAAAAAAAABiAO7/AAAAAAAAAABhAO7/AAAAAAAAAABgAO7/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_r7t3j")
 
 [node name="Terra" parent="." unique_id=430751878 instance=ExtResource("2_7w5b6")]
-position = Vector2(308, 272)
+position = Vector2(2723, -472)
+
+[node name="Camera2D" type="Camera2D" parent="Terra" unique_id=1340984442]
+
+[node name="BouncingClouds" type="Node" parent="." unique_id=1112631168]
+
+[node name="BouncingCloud" parent="BouncingClouds" unique_id=2055192752 node_paths=PackedStringArray("Character") instance=ExtResource("3_dpmm0")]
+position = Vector2(876, 168)
+Character = NodePath("../../Terra")
+
+[node name="BouncingCloud2" parent="BouncingClouds" unique_id=470536090 node_paths=PackedStringArray("Character") instance=ExtResource("3_dpmm0")]
+position = Vector2(1050, 248)
+Character = NodePath("../../Terra")
+
+[node name="BouncingCloud3" parent="BouncingClouds" unique_id=1185678053 node_paths=PackedStringArray("Character") instance=ExtResource("3_dpmm0")]
+position = Vector2(1227, 343)
+Character = NodePath("../../Terra")
+
+[node name="BouncingCloud4" parent="BouncingClouds" unique_id=825972232 node_paths=PackedStringArray("Character") instance=ExtResource("3_dpmm0")]
+position = Vector2(1746, 10)
+Character = NodePath("../../Terra")
+
+[node name="BouncingCloud5" parent="BouncingClouds" unique_id=547290110 node_paths=PackedStringArray("Character") instance=ExtResource("3_dpmm0")]
+position = Vector2(1746, -361)
+Character = NodePath("../../Terra")
+
+[node name="BouncingCloud6" parent="BouncingClouds" unique_id=1117599951 node_paths=PackedStringArray("Character") instance=ExtResource("3_dpmm0")]
+position = Vector2(2929, -444)
+Character = NodePath("../../Terra")
+
+[node name="MovingClouds" type="Node" parent="." unique_id=1920036634]
+
+[node name="Cloud" parent="MovingClouds" unique_id=22462759 instance=ExtResource("4_r7t3j")]
+position = Vector2(496, 323)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingClouds/Cloud" unique_id=1006044943]
+libraries/ = SubResource("AnimationLibrary_jwy3e")
+autoplay = &"hover"
+
+[node name="Cloud2" parent="MovingClouds" unique_id=373086942 instance=ExtResource("4_r7t3j")]
+position = Vector2(1627, 325)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingClouds/Cloud2" unique_id=236667768]
+libraries/ = SubResource("AnimationLibrary_8v7sy")
+autoplay = &"hover2"
+
+[node name="Cloud3" parent="MovingClouds" unique_id=1609418925 instance=ExtResource("4_r7t3j")]
+position = Vector2(1627, -91)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingClouds/Cloud3" unique_id=1756467828]
+libraries/ = SubResource("AnimationLibrary_dnye5")
+autoplay = &"hover3"
+
+[node name="Cloud4" parent="MovingClouds" unique_id=1810964885 instance=ExtResource("4_r7t3j")]
+position = Vector2(2140, -442)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingClouds/Cloud4" unique_id=1704657642]
+libraries/ = SubResource("AnimationLibrary_xn41m")
+autoplay = &"hover4"

@@ -10,6 +10,7 @@
 position = Vector2(158, 275)
 
 [node name="Camera2D" type="Camera2D" parent="Terra" unique_id=1632572956]
+zoom = Vector2(2, 2)
 
 [node name="Cloud2" parent="." unique_id=22462759 instance=ExtResource("2_6ewva")]
 position = Vector2(158, 298)

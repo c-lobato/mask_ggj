@@ -5,7 +5,7 @@ public partial class WalkState : State
 {
 	[Export] public CharacterBody2D Character;
 	[Export] public Terra Terra;
-	protected const float WalkSpeed = 100.0f;
+	protected const float WalkSpeed = 150.0f;
     
 	public override void Enter()
     {
