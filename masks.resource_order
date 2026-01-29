@@ -1,4 +1,10 @@
 {
-  "FolderOrderSettings":[],
+  "FolderOrderSettings":[
+    {"name":"Assets","order":2,"path":"folders/Assets.yy",},
+    {"name":"Sounds","order":2,"path":"folders/Assets/Sounds.yy",},
+    {"name":"Sprites","order":1,"path":"folders/Assets/Sprites.yy",},
+    {"name":"Rooms","order":3,"path":"folders/Rooms.yy",},
+    {"name":"Objects","order":1,"path":"folders/Objects.yy",},
+  ],
   "ResourceOrderSettings":[],
 }
