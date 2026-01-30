@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://crmruejnc2x3x"]
+
+[ext_resource type="Texture2D" uid="uid://un7kmkhbdmsx" path="res://assets/sprites/Drone.png" id="1_dil0n"]
+[ext_resource type="Script" uid="uid://dgrcoae6t7v5o" path="res://scripts/Drone.cs" id="1_knnud"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knnud"]
+atlas = ExtResource("1_dil0n")
+region = Rect2(0, 0, 27, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1r4ts"]
+atlas = ExtResource("1_dil0n")
+region = Rect2(27, 0, 27, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umx5g"]
+atlas = ExtResource("1_dil0n")
+region = Rect2(54, 0, 27, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1p8w"]
+atlas = ExtResource("1_dil0n")
+region = Rect2(81, 0, 27, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f6asb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knnud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1r4ts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umx5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1p8w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxcwj"]
+size = Vector2(24, 9)
+
+[node name="Drone" type="Area2D" unique_id=1290132074]
+script = ExtResource("1_knnud")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1206496885]
+sprite_frames = SubResource("SpriteFrames_f6asb")
+autoplay = "default"
+frame = 2
+frame_progress = 0.38627952
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=401792734]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_nxcwj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

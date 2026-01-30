@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://b8f2arpts6uog" path="res://scenes/terra.tscn" id="2_7w5b6"]
 [ext_resource type="PackedScene" uid="uid://bugmowx8w2m8g" path="res://scenes/bouncing_cloud.tscn" id="3_dpmm0"]
 [ext_resource type="PackedScene" uid="uid://cesem8hm7ndis" path="res://scenes/cloud.tscn" id="4_r7t3j"]
+[ext_resource type="PackedScene" uid="uid://crmruejnc2x3x" path="res://scenes/drone.tscn" id="5_r7t3j"]
+[ext_resource type="PackedScene" uid="uid://b3b8buc7nr7el" path="res://scenes/air_mask.tscn" id="6_jwy3e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dpmm0"]
 texture = ExtResource("1_p866x")
@@ -162,14 +164,26 @@ _data = {
 
 [node name="LevelAir" type="Node2D" unique_id=906813541]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1435324888]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1643465805]
+z_index = -7
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6117647, 0.8627451, 0.83137256, 1)
+
 [node name="Tiles" type="Node2D" parent="." unique_id=803337918]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Tiles" unique_id=402304345]
-tile_map_data = PackedByteArray("AAAJAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAALAAoAAAAAAAAAAAAIAAoAAAAAAAAAAAAJAAsAAAAAAAAAAAAKAAsAAAAAAAAAAAAHAAoAAAAAAAAAAAAMAAoAAAAAAAAAAAAIAAsAAAAAAAAAAAALAAsAAAAAAAAAAAASAAIAAAAAAAAAAAATAAIAAAAAAAAAAAAUAAIAAAAAAAAAAAAVAAIAAAAAAAAAAAAWAAIAAAAAAAAAAAAXAAIAAAAAAAAAAAATAAMAAAAAAAAAAAAUAAMAAAAAAAAAAAAVAAMAAAAAAAAAAAAWAAMAAAAAAAAAAAAqAAoAAAAAAAAAAAArAAoAAAAAAAAAAAAsAAoAAAAAAAAAAAAtAAoAAAAAAAAAAAAuAAoAAAAAAAAAAAAvAAoAAAAAAAAAAAArAAsAAAAAAAAAAAAsAAsAAAAAAAAAAAAtAAsAAAAAAAAAAAAuAAsAAAAAAAAAAAA6APL/AAAAAAAAAAA7APL/AAAAAAAAAAA8APL/AAAAAAAAAAA9APL/AAAAAAAAAAA+APL/AAAAAAAAAAA/APL/AAAAAAAAAABAAPL/AAAAAAAAAAA7APP/AAAAAAAAAAA8APP/AAAAAAAAAAA9APP/AAAAAAAAAAA+APP/AAAAAAAAAAA/APP/AAAAAAAAAABQAPL/AAAAAAAAAABRAPL/AAAAAAAAAABSAPL/AAAAAAAAAABTAPL/AAAAAAAAAABUAPL/AAAAAAAAAABVAPL/AAAAAAAAAABWAPL/AAAAAAAAAABRAPP/AAAAAAAAAABSAPP/AAAAAAAAAABTAPP/AAAAAAAAAABUAPP/AAAAAAAAAABVAPP/AAAAAAAAAABfAO3/AAAAAAAAAABgAO3/AAAAAAAAAABhAO3/AAAAAAAAAABiAO3/AAAAAAAAAABjAO3/AAAAAAAAAABkAO3/AAAAAAAAAABjAO7/AAAAAAAAAABiAO7/AAAAAAAAAABhAO7/AAAAAAAAAABgAO7/AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAJAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAALAAoAAAAAAAAAAAAIAAoAAAAAAAAAAAAJAAsAAAAAAAAAAAAKAAsAAAAAAAAAAAAHAAoAAAAAAAAAAAAMAAoAAAAAAAAAAAAIAAsAAAAAAAAAAAALAAsAAAAAAAAAAAASAAIAAAAAAAAAAAATAAIAAAAAAAAAAAAUAAIAAAAAAAAAAAAVAAIAAAAAAAAAAAAWAAIAAAAAAAAAAAAXAAIAAAAAAAAAAAATAAMAAAAAAAAAAAAUAAMAAAAAAAAAAAAVAAMAAAAAAAAAAAAWAAMAAAAAAAAAAAAqAAoAAAAAAAAAAAArAAoAAAAAAAAAAAAsAAoAAAAAAAAAAAAtAAoAAAAAAAAAAAAuAAoAAAAAAAAAAAAvAAoAAAAAAAAAAAArAAsAAAAAAAAAAAAsAAsAAAAAAAAAAAAtAAsAAAAAAAAAAAAuAAsAAAAAAAAAAAA6APL/AAAAAAAAAAA7APL/AAAAAAAAAAA8APL/AAAAAAAAAAA9APL/AAAAAAAAAAA+APL/AAAAAAAAAAA/APL/AAAAAAAAAABAAPL/AAAAAAAAAAA7APP/AAAAAAAAAAA8APP/AAAAAAAAAAA9APP/AAAAAAAAAAA+APP/AAAAAAAAAAA/APP/AAAAAAAAAABQAPL/AAAAAAAAAABRAPL/AAAAAAAAAABSAPL/AAAAAAAAAABTAPL/AAAAAAAAAABUAPL/AAAAAAAAAABVAPL/AAAAAAAAAABWAPL/AAAAAAAAAABRAPP/AAAAAAAAAABSAPP/AAAAAAAAAABTAPP/AAAAAAAAAABUAPP/AAAAAAAAAABVAPP/AAAAAAAAAABfAO3/AAAAAAAAAABgAO3/AAAAAAAAAABhAO3/AAAAAAAAAABiAO3/AAAAAAAAAABjAO3/AAAAAAAAAABkAO3/AAAAAAAAAABjAO7/AAAAAAAAAABiAO7/AAAAAAAAAABhAO7/AAAAAAAAAABgAO7/AAAAAAAAAAB6AN7/AAAAAAAAAAB7AN7/AAAAAAAAAAB8AN7/AAAAAAAAAAB9AN7/AAAAAAAAAAB+AN7/AAAAAAAAAAB/AN7/AAAAAAAAAAB7AN//AAAAAAAAAAB8AN//AAAAAAAAAAB9AN//AAAAAAAAAAB+AN//AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_r7t3j")
 
 [node name="Terra" parent="." unique_id=430751878 instance=ExtResource("2_7w5b6")]
-position = Vector2(2723, -472)
+position = Vector2(387, 297)
 
 [node name="Camera2D" type="Camera2D" parent="Terra" unique_id=1340984442]
 
@@ -197,6 +211,26 @@ Character = NodePath("../../Terra")
 
 [node name="BouncingCloud6" parent="BouncingClouds" unique_id=1117599951 node_paths=PackedStringArray("Character") instance=ExtResource("3_dpmm0")]
 position = Vector2(2929, -444)
+Character = NodePath("../../Terra")
+
+[node name="BouncingCloud7" parent="BouncingClouds" unique_id=301638995 node_paths=PackedStringArray("Character") instance=ExtResource("3_dpmm0")]
+position = Vector2(3357, -600)
+Character = NodePath("../../Terra")
+
+[node name="BouncingCloud8" parent="BouncingClouds" unique_id=1411805335 node_paths=PackedStringArray("Character") instance=ExtResource("3_dpmm0")]
+position = Vector2(3666, -602)
+Character = NodePath("../../Terra")
+
+[node name="BouncingCloud9" parent="BouncingClouds" unique_id=594348244 node_paths=PackedStringArray("Character") instance=ExtResource("3_dpmm0")]
+position = Vector2(3666, -740)
+Character = NodePath("../../Terra")
+
+[node name="BouncingCloud10" parent="BouncingClouds" unique_id=288822667 node_paths=PackedStringArray("Character") instance=ExtResource("3_dpmm0")]
+position = Vector2(3666, -870)
+Character = NodePath("../../Terra")
+
+[node name="BouncingCloud11" parent="BouncingClouds" unique_id=802362092 node_paths=PackedStringArray("Character") instance=ExtResource("3_dpmm0")]
+position = Vector2(3666, -990)
 Character = NodePath("../../Terra")
 
 [node name="MovingClouds" type="Node" parent="." unique_id=1920036634]
@@ -228,3 +262,120 @@ position = Vector2(2140, -442)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MovingClouds/Cloud4" unique_id=1704657642]
 libraries/ = SubResource("AnimationLibrary_xn41m")
 autoplay = &"hover4"
+
+[node name="Drones" type="Node" parent="." unique_id=1428839261]
+
+[node name="Drone" parent="Drones" unique_id=1290132074 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(2440, -460)
+Terra = NodePath("../../Terra")
+
+[node name="Drone2" parent="Drones" unique_id=1408002715 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(2518, -580)
+Terra = NodePath("../../Terra")
+
+[node name="Drone3" parent="Drones" unique_id=2122579029 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(2482, -521)
+Terra = NodePath("../../Terra")
+
+[node name="Drone4" parent="Drones" unique_id=2020816214 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(975, 54)
+Terra = NodePath("../../Terra")
+
+[node name="Drone5" parent="Drones" unique_id=488907736 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(1164, 153)
+Terra = NodePath("../../Terra")
+
+[node name="Drone6" parent="Drones" unique_id=1040137042 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(3461, -654)
+Terra = NodePath("../../Terra")
+
+[node name="Drone7" parent="Drones" unique_id=1993293360 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(3566, -654)
+Terra = NodePath("../../Terra")
+
+[node name="Drone8" parent="Drones" unique_id=392149772 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(3565, -734)
+Terra = NodePath("../../Terra")
+
+[node name="Drone10" parent="Drones" unique_id=835813645 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(3566, -810)
+Terra = NodePath("../../Terra")
+
+[node name="Drone11" parent="Drones" unique_id=770698066 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(3569, -885)
+Terra = NodePath("../../Terra")
+
+[node name="Drone12" parent="Drones" unique_id=194167484 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(3568, -955)
+Terra = NodePath("../../Terra")
+
+[node name="Drone13" parent="Drones" unique_id=207382643 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(3569, -1028)
+Terra = NodePath("../../Terra")
+
+[node name="Drone14" parent="Drones" unique_id=475754146 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(3752, -1028)
+Terra = NodePath("../../Terra")
+
+[node name="Drone20" parent="Drones" unique_id=1450241826 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(3754, -1087)
+Terra = NodePath("../../Terra")
+
+[node name="Drone21" parent="Drones" unique_id=388185185 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(3878, -1088)
+Terra = NodePath("../../Terra")
+
+[node name="Drone22" parent="Drones" unique_id=57124407 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(3819, -1088)
+Terra = NodePath("../../Terra")
+
+[node name="Drone23" parent="Drones" unique_id=546791395 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(3753, -1150)
+Terra = NodePath("../../Terra")
+
+[node name="Drone26" parent="Drones" unique_id=142097522 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(3665, -1195)
+Terra = NodePath("../../Terra")
+
+[node name="Drone27" parent="Drones" unique_id=2038344535 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(3573, -1149)
+Terra = NodePath("../../Terra")
+
+[node name="Drone28" parent="Drones" unique_id=1282273250 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(3568, -1091)
+Terra = NodePath("../../Terra")
+
+[node name="Drone24" parent="Drones" unique_id=1076936125 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(3814, -1151)
+Terra = NodePath("../../Terra")
+
+[node name="Drone25" parent="Drones" unique_id=2119389423 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(3878, -1150)
+Terra = NodePath("../../Terra")
+
+[node name="Drone15" parent="Drones" unique_id=2120105906 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(3752, -959)
+Terra = NodePath("../../Terra")
+
+[node name="Drone16" parent="Drones" unique_id=459656987 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(3752, -885)
+Terra = NodePath("../../Terra")
+
+[node name="Drone17" parent="Drones" unique_id=1640337637 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(3752, -815)
+Terra = NodePath("../../Terra")
+
+[node name="Drone18" parent="Drones" unique_id=187619051 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(3752, -738)
+Terra = NodePath("../../Terra")
+
+[node name="Drone19" parent="Drones" unique_id=2072742793 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(3752, -657)
+Terra = NodePath("../../Terra")
+
+[node name="Drone9" parent="Drones" unique_id=1321858713 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+position = Vector2(3463, -733)
+Terra = NodePath("../../Terra")
+
+[node name="AirMask" parent="." unique_id=1454800492 instance=ExtResource("6_jwy3e")]
+position = Vector2(4002, -1115)
