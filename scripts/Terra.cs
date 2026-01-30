@@ -7,6 +7,21 @@ public partial class Terra : CharacterBody2D
 	// [Export] public CpuParticles2D WalkDust;
 	// [Export] public CpuParticles2D JumpDust;
 
+	//variaveis booleanas de poderes do personagem
+	private bool canDoubleJump;
+	private bool canDash; 
+	private bool canAttack; 
+	private bool canBlock;
+
+	//ao carregar o jogo as variaveis serão setadas como false
+	public void _Ready()
+	{
+		canDoubleJump = false;
+		canAttack = false;
+		canDash = false;
+		canBlock = false;
+	}
+
 	// public enum PlayerEffect
 	// {
 	// 	WalkEffect,
