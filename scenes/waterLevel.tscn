@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dq147237m1opl"]
 
+[ext_resource type="Texture2D" uid="uid://cbft811ajlwdn" path="res://assets/sprites/level/DirtLayer.png" id="1_byac7"]
 [ext_resource type="Texture2D" uid="uid://cn61hnpv3016f" path="res://assets/sprites/level/WaterSoil.png" id="2_7nc8p"]
 [ext_resource type="PackedScene" uid="uid://b8f2arpts6uog" path="res://scenes/terra.tscn" id="4_8o5h3"]
 
@@ -35,17 +36,19 @@ color = Color(6.256998e-07, 0, 0.3427, 1)
 [node name="SoilParalax" type="Parallax2D" parent="LevelLayers" unique_id=975239686]
 repeat_size = Vector2(384, 0)
 
+[node name="DirtSprite" type="Sprite2D" parent="LevelLayers/SoilParalax" unique_id=2000274164]
+position = Vector2(192, 662)
+texture = ExtResource("1_byac7")
+
 [node name="SoilSprite" type="Sprite2D" parent="LevelLayers/SoilParalax" unique_id=687245796]
 position = Vector2(192, 540)
 texture = ExtResource("2_7nc8p")
 
 [node name="SoilSprite2" type="Sprite2D" parent="LevelLayers/SoilParalax" unique_id=823242092]
-visible = false
 position = Vector2(576, 540)
 texture = ExtResource("2_7nc8p")
 
 [node name="SoilSprite3" type="Sprite2D" parent="LevelLayers/SoilParalax" unique_id=462460664]
-visible = false
 position = Vector2(959, 540)
 texture = ExtResource("2_7nc8p")
 
