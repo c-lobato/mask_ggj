@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cesem8hm7ndis"]
 
-[ext_resource type="Texture2D" uid="uid://cx8qftd2pp15p" path="res://assets/sprites/nuvem5.png" id="1_vlwrh"]
+[ext_resource type="Texture2D" uid="uid://cx8qftd2pp15p" path="res://assets/sprites/Clouds/nuvem5.png" id="1_vlwrh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2kyfr"]
 size = Vector2(62, 13)
