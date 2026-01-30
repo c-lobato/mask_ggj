@@ -1,59 +1,57 @@
 [gd_scene format=3 uid="uid://dq147237m1opl"]
 
-[ext_resource type="Texture2D" uid="uid://cbft811ajlwdn" path="res://assets/sprites/level/DirtLayer.png" id="1_byac7"]
-[ext_resource type="Texture2D" uid="uid://cn61hnpv3016f" path="res://assets/sprites/level/WaterSoil.png" id="2_7nc8p"]
 [ext_resource type="PackedScene" uid="uid://b8f2arpts6uog" path="res://scenes/terra.tscn" id="4_8o5h3"]
+[ext_resource type="Texture2D" uid="uid://bn1pif7i3jgax" path="res://assets/sprites/level/agua_bg.png" id="4_11ucw"]
+[ext_resource type="Texture2D" uid="uid://dimcfrjbqlg41" path="res://assets/sprites/level/agua_midg.png" id="5_8o5h3"]
+[ext_resource type="Texture2D" uid="uid://def6ae7565rg6" path="res://assets/sprites/level/agua_foreg.png" id="6_egv78"]
 
 [node name="WaterLevel" type="Node2D" unique_id=1854936665]
 
-[node name="CloseWater" type="CanvasLayer" parent="." unique_id=1330878116]
-
-[node name="CloseWaterRect" type="ColorRect" parent="CloseWater" unique_id=683005253]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.39215687, 0.8627451, 0.98039216, 0.28627452)
-
-[node name="WaterBackground" type="CanvasLayer" parent="." unique_id=400647772]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1263559946]
 layer = -1
 
-[node name="WaterBackgroundRect" type="ColorRect" parent="WaterBackground" unique_id=380708448]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1254261171]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -1.0
-offset_right = -1.0
-offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(6.256998e-07, 0, 0.3427, 1)
+color = Color(0.11372549, 0.20392157, 0.24313726, 1)
 
-[node name="LevelLayers" type="Parallax2D" parent="." unique_id=1039092273]
+[node name="ParallaxLayer" type="Parallax2D" parent="." unique_id=1640488835]
 
-[node name="SoilParalax" type="Parallax2D" parent="LevelLayers" unique_id=975239686]
-repeat_size = Vector2(384, 0)
+[node name="BackgroundLayer" type="Parallax2D" parent="ParallaxLayer" unique_id=930301781]
 
-[node name="DirtSprite" type="Sprite2D" parent="LevelLayers/SoilParalax" unique_id=2000274164]
-position = Vector2(192, 662)
-texture = ExtResource("1_byac7")
+[node name="Background" type="Sprite2D" parent="ParallaxLayer/BackgroundLayer" unique_id=136531409]
+position = Vector2(1047.9999, 309)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("4_11ucw")
 
-[node name="SoilSprite" type="Sprite2D" parent="LevelLayers/SoilParalax" unique_id=687245796]
-position = Vector2(192, 540)
-texture = ExtResource("2_7nc8p")
+[node name="MidgroundLayer" type="Parallax2D" parent="ParallaxLayer" unique_id=1995965980]
+scroll_scale = Vector2(0.8, 0.8)
 
-[node name="SoilSprite2" type="Sprite2D" parent="LevelLayers/SoilParalax" unique_id=823242092]
-position = Vector2(576, 540)
-texture = ExtResource("2_7nc8p")
-
-[node name="SoilSprite3" type="Sprite2D" parent="LevelLayers/SoilParalax" unique_id=462460664]
-position = Vector2(959, 540)
-texture = ExtResource("2_7nc8p")
+[node name="Midground" type="Sprite2D" parent="ParallaxLayer/MidgroundLayer" unique_id=1038549998]
+position = Vector2(1048.0001, 308.00003)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("5_8o5h3")
 
 [node name="Terra" parent="." unique_id=430751878 instance=ExtResource("4_8o5h3")]
-position = Vector2(193, 540)
+position = Vector2(194, 340)
 
 [node name="Camera2D" type="Camera2D" parent="Terra" unique_id=1761318632]
+position = Vector2(-1, 2)
 zoom = Vector2(3, 3)
+
+[node name="Foreground" type="Parallax2D" parent="." unique_id=1255259288]
+scroll_scale = Vector2(1.5, 1.5)
+scroll_offset = Vector2(72, 72)
+
+[node name="Foreground" type="Sprite2D" parent="Foreground" unique_id=133515362]
+position = Vector2(1048.0001, 308.00003)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("6_egv78")
+
+[node name="Node2D" type="StaticBody2D" parent="." unique_id=150054301]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D" unique_id=1135135583]
+polygon = PackedVector2Array(147, 68, 1216, 65, 2066, 62, 2045, 529, 37, 536, 43, 101, 103, 67, 85, 29, 0, 30, -19, 30, -17, 594, 2113, 583, 2105, 28, 88, 28, 91, 38, 105, 70)
