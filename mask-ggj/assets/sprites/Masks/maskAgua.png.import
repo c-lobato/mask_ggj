@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cx8qftd2pp15p"
-path="res://.godot/imported/nuvem5.png-0d5737996394b6e51caa1ef8f877323d.ctex"
+uid="uid://733xcw31gdxt"
+path="res://.godot/imported/maskAgua.png-af1774048ca208347d64a2a440e42784.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/nuvem5.png"
-dest_files=["res://.godot/imported/nuvem5.png-0d5737996394b6e51caa1ef8f877323d.ctex"]
+source_file="res://assets/sprites/Masks/maskAgua.png"
+dest_files=["res://.godot/imported/maskAgua.png-af1774048ca208347d64a2a440e42784.ctex"]
 
 [params]
 

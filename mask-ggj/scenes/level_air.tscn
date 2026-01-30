@@ -2,10 +2,26 @@
 
 [ext_resource type="Texture2D" uid="uid://djcurrxkbphw5" path="res://assets/tiles/tile.png" id="1_p866x"]
 [ext_resource type="PackedScene" uid="uid://b8f2arpts6uog" path="res://scenes/terra.tscn" id="2_7w5b6"]
+[ext_resource type="Texture2D" uid="uid://cjwdrjw384gic" path="res://assets/tiles/AirTiles.png" id="2_rqfva"]
 [ext_resource type="PackedScene" uid="uid://bugmowx8w2m8g" path="res://scenes/bouncing_cloud.tscn" id="3_dpmm0"]
 [ext_resource type="PackedScene" uid="uid://cesem8hm7ndis" path="res://scenes/cloud.tscn" id="4_r7t3j"]
 [ext_resource type="PackedScene" uid="uid://crmruejnc2x3x" path="res://scenes/drone.tscn" id="5_r7t3j"]
 [ext_resource type="PackedScene" uid="uid://b3b8buc7nr7el" path="res://scenes/air_mask.tscn" id="6_jwy3e"]
+
+[sub_resource type="Gradient" id="Gradient_rqfva"]
+colors = PackedColorArray(0.46816152, 0.17877275, 0.541929, 1, 0.83284587, 0.5128128, 7.70092e-07, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8v7sy"]
+gradient = SubResource("Gradient_rqfva")
+fill_from = Vector2(0.5225694, 0.9670139)
+fill_to = Vector2(0.47395834, 0)
+
+[sub_resource type="Environment" id="Environment_rqfva"]
+background_mode = 3
+tonemap_mode = 1
+glow_enabled = true
+glow_intensity = 1.1
+glow_bloom = 0.2
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dpmm0"]
 texture = ExtResource("1_p866x")
@@ -13,10 +29,74 @@ texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rqfva"]
+polygon = PackedVector2Array(-11, -12, 16, -12, 16, 16, -11, 16)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8v7sy"]
+polygon = PackedVector2Array(-16, -11, 12, -11, 12, 12, -16, 12)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_tqg3p"]
+polygon = PackedVector2Array(-16, -12, 16, -12, 16, 16, -16, 16)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dnye5"]
+polygon = PackedVector2Array(-16, -16, 12, -16, 12, 12, -16, 12)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yc46s"]
+polygon = PackedVector2Array(-16, -12, 11, -12, 11, 16, -16, 16)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xn41m"]
+polygon = PackedVector2Array(-11, -16, 16, -16, 16, 11, -11, 11)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2l8r3"]
+polygon = PackedVector2Array(-13, -11, 16, -11, 16, 12, -13, 12)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_t8ycr"]
+polygon = PackedVector2Array(-16, -16, 16, -16, 16, 9, -16, 9)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8v7sy"]
+texture = ExtResource("2_rqfva")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_rqfva")
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14.363518, -9.662729, 16, -9.662729, 16, 16, -14.189415, 16)
+1:0/0 = 0
+1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_tqg3p")
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -9.715687, 16, -9.715687, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_yc46s")
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -9.662729, 13.667107, -9.662729, 14.015312, 16, -16, 16)
+3:0/0 = 0
+3:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_2l8r3")
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -9.715687, 16, -9.662729, 16, 13.318897, -16, 13.318897)
+0:1/0 = 0
+0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_8v7sy")
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -9.715687, 16, -9.662729, 16, 13.318897, -16, 13.318897)
+1:1/0 = 0
+1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_dnye5")
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 13.725338, -16, 13.493, 14.363518, -16, 14.537621)
+2:1/0 = 0
+2:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xn41m")
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14.015311, -16, 16, -16, 16, 14.537621, -13.8412075, 14.189415)
+3:1/0 = 0
+3:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_t8ycr")
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 13.841209, -16, 13.841209)
+
 [sub_resource type="TileSet" id="TileSet_r7t3j"]
 tile_size = Vector2i(32, 32)
+occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_dpmm0")
+sources/1 = SubResource("TileSetAtlasSource_8v7sy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rqfva"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(500, 250, 1)
+direction = Vector3(-1, 1, 0)
+spread = 20.0
+initial_velocity_min = 20.0
+initial_velocity_max = 80.0
+gravity = Vector3(0, 50, 0)
 
 [sub_resource type="Animation" id="Animation_dpmm0"]
 length = 0.001
@@ -164,28 +244,38 @@ _data = {
 
 [node name="LevelAir" type="Node2D" unique_id=906813541]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1435324888]
-layer = -1
+[node name="Background" type="Sprite2D" parent="." unique_id=1473356092]
+position = Vector2(1925, -317)
+scale = Vector2(131.92186, 64.109375)
+texture = SubResource("GradientTexture2D_8v7sy")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1643465805]
-z_index = -7
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.6117647, 0.8627451, 0.83137256, 1)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1359261664]
+environment = SubResource("Environment_rqfva")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2120397142]
+color = Color(0.76839274, 0.8785139, 0.81876373, 1)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=2032376657]
+color = Color(0.37373656, 0.039773665, 0.23980787, 1)
+energy = 1.47
 
 [node name="Tiles" type="Node2D" parent="." unique_id=803337918]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Tiles" unique_id=402304345]
-tile_map_data = PackedByteArray("AAAJAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAALAAoAAAAAAAAAAAAIAAoAAAAAAAAAAAAJAAsAAAAAAAAAAAAKAAsAAAAAAAAAAAAHAAoAAAAAAAAAAAAMAAoAAAAAAAAAAAAIAAsAAAAAAAAAAAALAAsAAAAAAAAAAAASAAIAAAAAAAAAAAATAAIAAAAAAAAAAAAUAAIAAAAAAAAAAAAVAAIAAAAAAAAAAAAWAAIAAAAAAAAAAAAXAAIAAAAAAAAAAAATAAMAAAAAAAAAAAAUAAMAAAAAAAAAAAAVAAMAAAAAAAAAAAAWAAMAAAAAAAAAAAAqAAoAAAAAAAAAAAArAAoAAAAAAAAAAAAsAAoAAAAAAAAAAAAtAAoAAAAAAAAAAAAuAAoAAAAAAAAAAAAvAAoAAAAAAAAAAAArAAsAAAAAAAAAAAAsAAsAAAAAAAAAAAAtAAsAAAAAAAAAAAAuAAsAAAAAAAAAAAA6APL/AAAAAAAAAAA7APL/AAAAAAAAAAA8APL/AAAAAAAAAAA9APL/AAAAAAAAAAA+APL/AAAAAAAAAAA/APL/AAAAAAAAAABAAPL/AAAAAAAAAAA7APP/AAAAAAAAAAA8APP/AAAAAAAAAAA9APP/AAAAAAAAAAA+APP/AAAAAAAAAAA/APP/AAAAAAAAAABQAPL/AAAAAAAAAABRAPL/AAAAAAAAAABSAPL/AAAAAAAAAABTAPL/AAAAAAAAAABUAPL/AAAAAAAAAABVAPL/AAAAAAAAAABWAPL/AAAAAAAAAABRAPP/AAAAAAAAAABSAPP/AAAAAAAAAABTAPP/AAAAAAAAAABUAPP/AAAAAAAAAABVAPP/AAAAAAAAAABfAO3/AAAAAAAAAABgAO3/AAAAAAAAAABhAO3/AAAAAAAAAABiAO3/AAAAAAAAAABjAO3/AAAAAAAAAABkAO3/AAAAAAAAAABjAO7/AAAAAAAAAABiAO7/AAAAAAAAAABhAO7/AAAAAAAAAABgAO7/AAAAAAAAAAB6AN7/AAAAAAAAAAB7AN7/AAAAAAAAAAB8AN7/AAAAAAAAAAB9AN7/AAAAAAAAAAB+AN7/AAAAAAAAAAB/AN7/AAAAAAAAAAB7AN//AAAAAAAAAAB8AN//AAAAAAAAAAB9AN//AAAAAAAAAAB+AN//AAAAAAAAAAA=")
+z_index = 1
+tile_map_data = PackedByteArray("AAAJAAoAAQABAAAAAAAKAAoAAQABAAAAAAALAAoAAQABAAAAAAAIAAoAAQABAAAAAAAJAAsAAQADAAEAAAAKAAsAAQADAAEAAAAHAAoAAQADAAAAAAAMAAoAAQAAAAEAAAAIAAsAAQACAAEAAAALAAsAAQABAAEAAAASAAIAAQADAAAAAAATAAIAAQABAAAAAAAUAAIAAQABAAAAAAAVAAIAAQABAAAAAAAWAAIAAQABAAAAAAAXAAIAAQACAAAAAAATAAMAAQACAAEAAAAUAAMAAQADAAEAAAAVAAMAAQADAAEAAAAWAAMAAQABAAEAAAAqAAoAAQADAAAAAAArAAoAAQABAAAAAAAsAAoAAQABAAAAAAAtAAoAAQABAAAAAAAuAAoAAQABAAAAAAAvAAoAAQAAAAEAAAArAAsAAQACAAEAAAAsAAsAAQADAAEAAAAtAAsAAQADAAEAAAAuAAsAAQABAAEAAAA6APL/AQADAAAAAAA7APL/AQABAAAAAAA8APL/AQABAAAAAAA9APL/AQABAAAAAAA+APL/AQABAAAAAAA/APL/AQABAAAAAABAAPL/AQAAAAEAAAA7APP/AQACAAEAAAA8APP/AQADAAEAAAA9APP/AQADAAEAAAA+APP/AQADAAEAAAA/APP/AQABAAEAAABQAPL/AQADAAAAAABRAPL/AQABAAAAAABSAPL/AQABAAAAAABTAPL/AQABAAAAAABUAPL/AQABAAAAAABVAPL/AQABAAAAAABWAPL/AQAAAAEAAABRAPP/AQACAAEAAABSAPP/AQADAAEAAABTAPP/AQADAAEAAABUAPP/AQADAAEAAABVAPP/AQABAAEAAABfAO3/AQADAAAAAABgAO3/AQABAAAAAABhAO3/AQABAAAAAABiAO3/AQABAAAAAABjAO3/AQABAAAAAABkAO3/AQAAAAEAAABjAO7/AQABAAEAAABiAO7/AQADAAEAAABhAO7/AQADAAEAAABgAO7/AQACAAEAAAB6AN7/AQADAAAAAAB7AN7/AQABAAAAAAB8AN7/AQABAAAAAAB9AN7/AQABAAAAAAB7AN//AQACAAEAAAB8AN//AQADAAEAAAB9AN//AQADAAEAAAB+AN//AQABAAEAAAB/AN7/AQAAAAEAAAB+AN7/AQABAAAAAAA=")
 tile_set = SubResource("TileSet_r7t3j")
 
 [node name="Terra" parent="." unique_id=430751878 instance=ExtResource("2_7w5b6")]
-position = Vector2(387, 297)
+position = Vector2(311, 293)
 
 [node name="Camera2D" type="Camera2D" parent="Terra" unique_id=1340984442]
+zoom = Vector2(1.5, 1.5)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Terra" unique_id=47155154]
+amount = 100
+visibility_rect = Rect2(-500, -250, 1000, 500)
+process_material = SubResource("ParticleProcessMaterial_rqfva")
 
 [node name="BouncingClouds" type="Node" parent="." unique_id=1112631168]
 
@@ -378,4 +468,4 @@ position = Vector2(3463, -733)
 Terra = NodePath("../../Terra")
 
 [node name="AirMask" parent="." unique_id=1454800492 instance=ExtResource("6_jwy3e")]
-position = Vector2(4002, -1115)
+position = Vector2(4002, -1104)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f3g0f6k4pvy6"
-path="res://.godot/imported/Terrajump.png-3c0a02ee0a2c614dd946945b9fbea919.ctex"
+uid="uid://cvwu3qtxkxlu7"
+path="res://.godot/imported/Arstill.png-88a692cf608a4d7fb884a6deeb5be48d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Terrajump.png"
-dest_files=["res://.godot/imported/Terrajump.png-3c0a02ee0a2c614dd946945b9fbea919.ctex"]
+source_file="res://assets/sprites/Ar/Arstill.png"
+dest_files=["res://.godot/imported/Arstill.png-88a692cf608a4d7fb884a6deeb5be48d.ctex"]
 
 [params]
 

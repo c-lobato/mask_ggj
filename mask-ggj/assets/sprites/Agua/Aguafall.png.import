@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwx1rkyo1cflw"
-path="res://.godot/imported/Terrafall.png-62ff05a585a6465bc6b79a008d84425b.ctex"
+uid="uid://cfpnwm4201eyb"
+path="res://.godot/imported/Aguafall.png-8f67abd43d0d04eacd384bd9d14560da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Terrafall.png"
-dest_files=["res://.godot/imported/Terrafall.png-62ff05a585a6465bc6b79a008d84425b.ctex"]
+source_file="res://assets/sprites/Agua/Aguafall.png"
+dest_files=["res://.godot/imported/Aguafall.png-8f67abd43d0d04eacd384bd9d14560da.ctex"]
 
 [params]
 

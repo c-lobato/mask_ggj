@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://733xcw31gdxt"
-path="res://.godot/imported/maskAgua.png-6df7534ba16b049d78295f70e18b5e4b.ctex"
+uid="uid://bwbb2l8ggftsx"
+path="res://.godot/imported/Arwalk.png-12aa6882349ba6b0058ebe15e83fdd5b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/maskAgua.png"
-dest_files=["res://.godot/imported/maskAgua.png-6df7534ba16b049d78295f70e18b5e4b.ctex"]
+source_file="res://assets/sprites/Ar/Arwalk.png"
+dest_files=["res://.godot/imported/Arwalk.png-12aa6882349ba6b0058ebe15e83fdd5b.ctex"]
 
 [params]
 

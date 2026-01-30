@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bugmowx8w2m8g"]
 
-[ext_resource type="Texture2D" uid="uid://cgibubbgr5pjw" path="res://assets/sprites/NuvemdouradaAnim.png" id="1_gbyq8"]
+[ext_resource type="Texture2D" uid="uid://cgibubbgr5pjw" path="res://assets/sprites/Clouds/NuvemdouradaAnim.png" id="1_gbyq8"]
 [ext_resource type="Script" uid="uid://mmw2lngohggi" path="res://scripts/BouncingCloud.cs" id="1_hxhet"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hxhet"]

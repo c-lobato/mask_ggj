@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgibubbgr5pjw"
-path="res://.godot/imported/NuvemdouradaAnim.png-ff17d7c2cea4889302abbf7e897928d3.ctex"
+path="res://.godot/imported/NuvemdouradaAnim.png-e8471edd6c2dd3134a9761683f710c17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/NuvemdouradaAnim.png"
-dest_files=["res://.godot/imported/NuvemdouradaAnim.png-ff17d7c2cea4889302abbf7e897928d3.ctex"]
+source_file="res://assets/sprites/Clouds/NuvemdouradaAnim.png"
+dest_files=["res://.godot/imported/NuvemdouradaAnim.png-e8471edd6c2dd3134a9761683f710c17.ctex"]
 
 [params]
 

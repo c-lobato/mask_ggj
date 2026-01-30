@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://c7rikkbtsihu5"]
+
+[ext_resource type="Texture2D" uid="uid://cfpnwm4201eyb" path="res://assets/sprites/Agua/Aguafall.png" id="1_wrhic"]
+[ext_resource type="Texture2D" uid="uid://dlp23cise5qnj" path="res://assets/sprites/Agua/Aguajump.png" id="2_astc6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqq6q"]
+atlas = ExtResource("1_wrhic")
+region = Rect2(0, 0, 25, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbyad"]
+atlas = ExtResource("1_wrhic")
+region = Rect2(25, 0, 25, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wew8i"]
+atlas = ExtResource("1_wrhic")
+region = Rect2(50, 0, 25, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82536"]
+atlas = ExtResource("1_wrhic")
+region = Rect2(75, 0, 25, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jbcv"]
+atlas = ExtResource("2_astc6")
+region = Rect2(0, 0, 25, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx42f"]
+atlas = ExtResource("2_astc6")
+region = Rect2(25, 0, 25, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13r74"]
+atlas = ExtResource("2_astc6")
+region = Rect2(50, 0, 25, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m30wf"]
+atlas = ExtResource("2_astc6")
+region = Rect2(75, 0, 25, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3i8gb"]
+atlas = ExtResource("2_astc6")
+region = Rect2(100, 0, 25, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26afm"]
+atlas = ExtResource("2_astc6")
+region = Rect2(125, 0, 25, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_amdvs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqq6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbyad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wew8i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82536")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jbcv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gx42f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13r74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m30wf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3i8gb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26afm")
+}],
+"loop": false,
+"name": &"swimupstate",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2lee"]
+size = Vector2(4, 16)
+
+[node name="Agua" type="CharacterBody2D" unique_id=1385341485]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=24598210]
+sprite_frames = SubResource("SpriteFrames_amdvs")
+animation = &"new_animation"
+frame_progress = 0.97550404
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1700625825]
+position = Vector2(1, -2)
+shape = SubResource("RectangleShape2D_u2lee")
+
+[node name="StateMachine" type="Node" parent="." unique_id=1138628523]
+
+[node name="SwimUpState" type="Node" parent="StateMachine" unique_id=1213155693]
+
+[node name="SwimDownState" type="Node" parent="StateMachine" unique_id=1643477989]

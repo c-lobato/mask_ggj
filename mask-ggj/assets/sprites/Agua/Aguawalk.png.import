@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mher4e445pj4"
-path="res://.godot/imported/maskFogo.png-f71f1013e729333c2b35675ea18f9b75.ctex"
+uid="uid://du78i7a6wdmji"
+path="res://.godot/imported/Aguawalk.png-c512097ba9674b64e7fa486339ed9364.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/maskFogo.png"
-dest_files=["res://.godot/imported/maskFogo.png-f71f1013e729333c2b35675ea18f9b75.ctex"]
+source_file="res://assets/sprites/Agua/Aguawalk.png"
+dest_files=["res://.godot/imported/Aguawalk.png-c512097ba9674b64e7fa486339ed9364.ctex"]
 
 [params]
 
