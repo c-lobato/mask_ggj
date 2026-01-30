@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://b8f2arpts6uog"]
 
 [ext_resource type="Texture2D" uid="uid://b0lw88li61mr4" path="res://assets/sprites/Terrastill.png" id="1_5ne22"]
-[ext_resource type="Script" uid="uid://boablv1knl1hf" path="res://scripts/Terra.cs" id="1_y5dra"]
+[ext_resource type="Script" uid="uid://boablv1knl1hf" path="res://scripts/player/Terra.cs" id="1_y5dra"]
 [ext_resource type="Texture2D" uid="uid://doij0toi73b0w" path="res://assets/sprites/Terrawalk.png" id="2_4d8ui"]
 [ext_resource type="Texture2D" uid="uid://cwx1rkyo1cflw" path="res://assets/sprites/Terrafall.png" id="2_h2qv2"]
-[ext_resource type="Script" uid="uid://1ewt87as03kn" path="res://scripts/StateMachine.cs" id="4_mbuac"]
+[ext_resource type="Script" uid="uid://1ewt87as03kn" path="res://scripts/player/StateMachine.cs" id="4_mbuac"]
 [ext_resource type="Texture2D" uid="uid://f3g0f6k4pvy6" path="res://assets/sprites/Terrajump.png" id="4_yu30d"]
-[ext_resource type="Script" uid="uid://6wfqwvebg4ck" path="res://scripts/IdleState.cs" id="5_h2qv2"]
-[ext_resource type="Script" uid="uid://c8ru12khn3yi1" path="res://scripts/WalkState.cs" id="6_yu30d"]
-[ext_resource type="Script" uid="uid://c2beyp25jh5fq" path="res://scripts/JumpState.cs" id="7_16do0"]
-[ext_resource type="Script" uid="uid://dfbchkfoldbev" path="res://scripts/FallState.cs" id="8_o4opb"]
+[ext_resource type="Script" uid="uid://6wfqwvebg4ck" path="res://scripts/player/IdleState.cs" id="5_h2qv2"]
+[ext_resource type="Script" uid="uid://c8ru12khn3yi1" path="res://scripts/player/WalkState.cs" id="6_yu30d"]
+[ext_resource type="Script" uid="uid://c2beyp25jh5fq" path="res://scripts/player/JumpState.cs" id="7_16do0"]
+[ext_resource type="Script" uid="uid://dfbchkfoldbev" path="res://scripts/player/FallState.cs" id="8_o4opb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ui6qp"]
 atlas = ExtResource("2_h2qv2")
