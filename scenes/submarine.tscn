@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://coeqkfq8v3uo1" path="res://assets/sprites/Submarino.png" id="1_gua2t"]
 [ext_resource type="Script" uid="uid://yp4yowu0pnuv" path="res://scripts/Submarine.cs" id="1_r3h5y"]
+[ext_resource type="PackedScene" uid="uid://x3lairx0iq6e" path="res://scenes/projetil.tscn" id="2_cjhfg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r3h5y"]
 atlas = ExtResource("1_gua2t")
@@ -112,24 +113,24 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a23f2"]
 size = Vector2(20, 12)
 
-[node name="SubmarineEnemy" type="Node2D" unique_id=999309739]
-
-[node name="Submarine" type="RigidBody2D" parent="." unique_id=418129342 node_paths=PackedStringArray("animatedSprite")]
-position = Vector2(24, 18)
+[node name="Submarine" type="RigidBody2D" unique_id=418129342 node_paths=PackedStringArray("animatedSprite")]
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_r3h5y")
 animatedSprite = NodePath("AnimatedSprite2D")
 walkLimit = 120.0
+ProjectileScene = ExtResource("2_cjhfg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Submarine" unique_id=575968484]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=575968484]
 sprite_frames = SubResource("SpriteFrames_5ykx4")
-frame_progress = 0.45109817
+frame_progress = 0.88562125
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Submarine" unique_id=304534448]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=304534448]
 position = Vector2(7, 0)
 shape = SubResource("RectangleShape2D_a23f2")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Submarine" unique_id=838379347]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=838379347]
 position = Vector2(7, 0)
 rect = Rect2(-18, -6, 28, 12)
+
+[node name="Timer" type="Timer" parent="." unique_id=1539840238]
