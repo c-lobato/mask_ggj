@@ -1,12 +1,13 @@
 [gd_scene format=4 uid="uid://cytqmu1clsset"]
 
 [ext_resource type="Texture2D" uid="uid://djcurrxkbphw5" path="res://assets/tiles/tile.png" id="1_p866x"]
-[ext_resource type="PackedScene" uid="uid://b8f2arpts6uog" path="res://scenes/terra.tscn" id="2_7w5b6"]
 [ext_resource type="Texture2D" uid="uid://cjwdrjw384gic" path="res://assets/tiles/AirTiles.png" id="2_rqfva"]
 [ext_resource type="PackedScene" uid="uid://bugmowx8w2m8g" path="res://scenes/bouncing_cloud.tscn" id="3_dpmm0"]
 [ext_resource type="PackedScene" uid="uid://cesem8hm7ndis" path="res://scenes/cloud.tscn" id="4_r7t3j"]
 [ext_resource type="PackedScene" uid="uid://crmruejnc2x3x" path="res://scenes/drone.tscn" id="5_r7t3j"]
-[ext_resource type="PackedScene" uid="uid://b3b8buc7nr7el" path="res://scenes/air_mask.tscn" id="6_jwy3e"]
+[ext_resource type="PackedScene" uid="uid://b3b8buc7nr7el" path="res://scenes/masks/air_mask.tscn" id="6_jwy3e"]
+[ext_resource type="PackedScene" uid="uid://b4yjc8iwfvvym" path="res://scenes/ar.tscn" id="7_rqfva"]
+[ext_resource type="PackedScene" uid="uid://c7mta6tq8v87w" path="res://scenes/killzone.tscn" id="8_8v7sy"]
 
 [sub_resource type="Gradient" id="Gradient_rqfva"]
 colors = PackedColorArray(0.46816152, 0.17877275, 0.541929, 1, 0.83284587, 0.5128128, 7.70092e-07, 1)
@@ -242,6 +243,8 @@ _data = {
 &"hover4": SubResource("Animation_yc46s")
 }
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tqg3p"]
+
 [node name="LevelAir" type="Node2D" unique_id=906813541]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1473356092]
@@ -266,62 +269,74 @@ z_index = 1
 tile_map_data = PackedByteArray("AAAJAAoAAQABAAAAAAAKAAoAAQABAAAAAAALAAoAAQABAAAAAAAIAAoAAQABAAAAAAAJAAsAAQADAAEAAAAKAAsAAQADAAEAAAAHAAoAAQADAAAAAAAMAAoAAQAAAAEAAAAIAAsAAQACAAEAAAALAAsAAQABAAEAAAASAAIAAQADAAAAAAATAAIAAQABAAAAAAAUAAIAAQABAAAAAAAVAAIAAQABAAAAAAAWAAIAAQABAAAAAAAXAAIAAQACAAAAAAATAAMAAQACAAEAAAAUAAMAAQADAAEAAAAVAAMAAQADAAEAAAAWAAMAAQABAAEAAAAqAAoAAQADAAAAAAArAAoAAQABAAAAAAAsAAoAAQABAAAAAAAtAAoAAQABAAAAAAAuAAoAAQABAAAAAAAvAAoAAQAAAAEAAAArAAsAAQACAAEAAAAsAAsAAQADAAEAAAAtAAsAAQADAAEAAAAuAAsAAQABAAEAAAA6APL/AQADAAAAAAA7APL/AQABAAAAAAA8APL/AQABAAAAAAA9APL/AQABAAAAAAA+APL/AQABAAAAAAA/APL/AQABAAAAAABAAPL/AQAAAAEAAAA7APP/AQACAAEAAAA8APP/AQADAAEAAAA9APP/AQADAAEAAAA+APP/AQADAAEAAAA/APP/AQABAAEAAABQAPL/AQADAAAAAABRAPL/AQABAAAAAABSAPL/AQABAAAAAABTAPL/AQABAAAAAABUAPL/AQABAAAAAABVAPL/AQABAAAAAABWAPL/AQAAAAEAAABRAPP/AQACAAEAAABSAPP/AQADAAEAAABTAPP/AQADAAEAAABUAPP/AQADAAEAAABVAPP/AQABAAEAAABfAO3/AQADAAAAAABgAO3/AQABAAAAAABhAO3/AQABAAAAAABiAO3/AQABAAAAAABjAO3/AQABAAAAAABkAO3/AQAAAAEAAABjAO7/AQABAAEAAABiAO7/AQADAAEAAABhAO7/AQADAAEAAABgAO7/AQACAAEAAAB6AN7/AQADAAAAAAB7AN7/AQABAAAAAAB8AN7/AQABAAAAAAB9AN7/AQABAAAAAAB7AN//AQACAAEAAAB8AN//AQADAAEAAAB9AN//AQADAAEAAAB+AN//AQABAAEAAAB/AN7/AQAAAAEAAAB+AN7/AQABAAAAAAA=")
 tile_set = SubResource("TileSet_r7t3j")
 
-[node name="Terra" parent="." unique_id=430751878 instance=ExtResource("2_7w5b6")]
-position = Vector2(311, 293)
+[node name="Ar" parent="." unique_id=482346309 instance=ExtResource("7_rqfva")]
+position = Vector2(745, 38)
 
-[node name="Camera2D" type="Camera2D" parent="Terra" unique_id=1340984442]
+[node name="Camera2D" type="Camera2D" parent="Ar" unique_id=2089967236]
 zoom = Vector2(1.5, 1.5)
+limit_bottom = 650
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="Terra" unique_id=47155154]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Ar" unique_id=47155154]
 amount = 100
 visibility_rect = Rect2(-500, -250, 1000, 500)
 process_material = SubResource("ParticleProcessMaterial_rqfva")
 
 [node name="BouncingClouds" type="Node" parent="." unique_id=1112631168]
 
-[node name="BouncingCloud" parent="BouncingClouds" unique_id=2055192752 node_paths=PackedStringArray("Character") instance=ExtResource("3_dpmm0")]
+[node name="BouncingCloud" parent="BouncingClouds" unique_id=2055192752 node_paths=PackedStringArray("Character", "Ar") instance=ExtResource("3_dpmm0")]
 position = Vector2(876, 168)
-Character = NodePath("../../Terra")
+Character = NodePath("../../Ar")
+Ar = NodePath("../../Ar")
 
-[node name="BouncingCloud2" parent="BouncingClouds" unique_id=470536090 node_paths=PackedStringArray("Character") instance=ExtResource("3_dpmm0")]
+[node name="BouncingCloud2" parent="BouncingClouds" unique_id=470536090 node_paths=PackedStringArray("Character", "Ar") instance=ExtResource("3_dpmm0")]
 position = Vector2(1050, 248)
-Character = NodePath("../../Terra")
+Character = NodePath("../../Ar")
+Ar = NodePath("../../Ar")
 
-[node name="BouncingCloud3" parent="BouncingClouds" unique_id=1185678053 node_paths=PackedStringArray("Character") instance=ExtResource("3_dpmm0")]
+[node name="BouncingCloud3" parent="BouncingClouds" unique_id=1185678053 node_paths=PackedStringArray("Character", "Ar") instance=ExtResource("3_dpmm0")]
 position = Vector2(1227, 343)
-Character = NodePath("../../Terra")
+Character = NodePath("../../Ar")
+Ar = NodePath("../../Ar")
 
-[node name="BouncingCloud4" parent="BouncingClouds" unique_id=825972232 node_paths=PackedStringArray("Character") instance=ExtResource("3_dpmm0")]
+[node name="BouncingCloud4" parent="BouncingClouds" unique_id=825972232 node_paths=PackedStringArray("Character", "Ar") instance=ExtResource("3_dpmm0")]
 position = Vector2(1746, 10)
-Character = NodePath("../../Terra")
+Character = NodePath("../../Ar")
+Ar = NodePath("../../Ar")
 
-[node name="BouncingCloud5" parent="BouncingClouds" unique_id=547290110 node_paths=PackedStringArray("Character") instance=ExtResource("3_dpmm0")]
+[node name="BouncingCloud5" parent="BouncingClouds" unique_id=547290110 node_paths=PackedStringArray("Character", "Ar") instance=ExtResource("3_dpmm0")]
 position = Vector2(1746, -361)
-Character = NodePath("../../Terra")
+Character = NodePath("../../Ar")
+Ar = NodePath("../../Ar")
 
-[node name="BouncingCloud6" parent="BouncingClouds" unique_id=1117599951 node_paths=PackedStringArray("Character") instance=ExtResource("3_dpmm0")]
+[node name="BouncingCloud6" parent="BouncingClouds" unique_id=1117599951 node_paths=PackedStringArray("Character", "Ar") instance=ExtResource("3_dpmm0")]
 position = Vector2(2929, -444)
-Character = NodePath("../../Terra")
+Character = NodePath("../../Ar")
+Ar = NodePath("../../Ar")
 
-[node name="BouncingCloud7" parent="BouncingClouds" unique_id=301638995 node_paths=PackedStringArray("Character") instance=ExtResource("3_dpmm0")]
+[node name="BouncingCloud7" parent="BouncingClouds" unique_id=301638995 node_paths=PackedStringArray("Character", "Ar") instance=ExtResource("3_dpmm0")]
 position = Vector2(3357, -600)
-Character = NodePath("../../Terra")
+Character = NodePath("../../Ar")
+Ar = NodePath("../../Ar")
 
-[node name="BouncingCloud8" parent="BouncingClouds" unique_id=1411805335 node_paths=PackedStringArray("Character") instance=ExtResource("3_dpmm0")]
+[node name="BouncingCloud8" parent="BouncingClouds" unique_id=1411805335 node_paths=PackedStringArray("Character", "Ar") instance=ExtResource("3_dpmm0")]
 position = Vector2(3666, -602)
-Character = NodePath("../../Terra")
+Character = NodePath("../../Ar")
+Ar = NodePath("../../Ar")
 
-[node name="BouncingCloud9" parent="BouncingClouds" unique_id=594348244 node_paths=PackedStringArray("Character") instance=ExtResource("3_dpmm0")]
+[node name="BouncingCloud9" parent="BouncingClouds" unique_id=594348244 node_paths=PackedStringArray("Character", "Ar") instance=ExtResource("3_dpmm0")]
 position = Vector2(3666, -740)
-Character = NodePath("../../Terra")
+Character = NodePath("../../Ar")
+Ar = NodePath("../../Ar")
 
-[node name="BouncingCloud10" parent="BouncingClouds" unique_id=288822667 node_paths=PackedStringArray("Character") instance=ExtResource("3_dpmm0")]
+[node name="BouncingCloud10" parent="BouncingClouds" unique_id=288822667 node_paths=PackedStringArray("Character", "Ar") instance=ExtResource("3_dpmm0")]
 position = Vector2(3666, -870)
-Character = NodePath("../../Terra")
+Character = NodePath("../../Ar")
+Ar = NodePath("../../Ar")
 
-[node name="BouncingCloud11" parent="BouncingClouds" unique_id=802362092 node_paths=PackedStringArray("Character") instance=ExtResource("3_dpmm0")]
+[node name="BouncingCloud11" parent="BouncingClouds" unique_id=802362092 node_paths=PackedStringArray("Character", "Ar") instance=ExtResource("3_dpmm0")]
 position = Vector2(3666, -990)
-Character = NodePath("../../Terra")
+Character = NodePath("../../Ar")
+Ar = NodePath("../../Ar")
 
 [node name="MovingClouds" type="Node" parent="." unique_id=1920036634]
 
@@ -355,117 +370,124 @@ autoplay = &"hover4"
 
 [node name="Drones" type="Node" parent="." unique_id=1428839261]
 
-[node name="Drone" parent="Drones" unique_id=1290132074 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone" parent="Drones" unique_id=1290132074 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(2440, -460)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
-[node name="Drone2" parent="Drones" unique_id=1408002715 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone2" parent="Drones" unique_id=1408002715 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(2518, -580)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
-[node name="Drone3" parent="Drones" unique_id=2122579029 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone3" parent="Drones" unique_id=2122579029 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(2482, -521)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
-[node name="Drone4" parent="Drones" unique_id=2020816214 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone4" parent="Drones" unique_id=2020816214 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(975, 54)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
-[node name="Drone5" parent="Drones" unique_id=488907736 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone5" parent="Drones" unique_id=488907736 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(1164, 153)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
-[node name="Drone6" parent="Drones" unique_id=1040137042 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone6" parent="Drones" unique_id=1040137042 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(3461, -654)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
-[node name="Drone7" parent="Drones" unique_id=1993293360 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone7" parent="Drones" unique_id=1993293360 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(3566, -654)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
-[node name="Drone8" parent="Drones" unique_id=392149772 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone8" parent="Drones" unique_id=392149772 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(3565, -734)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
-[node name="Drone10" parent="Drones" unique_id=835813645 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone10" parent="Drones" unique_id=835813645 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(3566, -810)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
-[node name="Drone11" parent="Drones" unique_id=770698066 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone11" parent="Drones" unique_id=770698066 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(3569, -885)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
-[node name="Drone12" parent="Drones" unique_id=194167484 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone12" parent="Drones" unique_id=194167484 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(3568, -955)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
-[node name="Drone13" parent="Drones" unique_id=207382643 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone13" parent="Drones" unique_id=207382643 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(3569, -1028)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
-[node name="Drone14" parent="Drones" unique_id=475754146 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone14" parent="Drones" unique_id=475754146 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(3752, -1028)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
-[node name="Drone20" parent="Drones" unique_id=1450241826 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone20" parent="Drones" unique_id=1450241826 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(3754, -1087)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
-[node name="Drone21" parent="Drones" unique_id=388185185 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone21" parent="Drones" unique_id=388185185 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(3878, -1088)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
-[node name="Drone22" parent="Drones" unique_id=57124407 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone22" parent="Drones" unique_id=57124407 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(3819, -1088)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
-[node name="Drone23" parent="Drones" unique_id=546791395 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone23" parent="Drones" unique_id=546791395 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(3753, -1150)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
-[node name="Drone26" parent="Drones" unique_id=142097522 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone26" parent="Drones" unique_id=142097522 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(3665, -1195)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
-[node name="Drone27" parent="Drones" unique_id=2038344535 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone27" parent="Drones" unique_id=2038344535 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(3573, -1149)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
-[node name="Drone28" parent="Drones" unique_id=1282273250 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone28" parent="Drones" unique_id=1282273250 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(3568, -1091)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
-[node name="Drone24" parent="Drones" unique_id=1076936125 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone24" parent="Drones" unique_id=1076936125 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(3814, -1151)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
-[node name="Drone25" parent="Drones" unique_id=2119389423 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone25" parent="Drones" unique_id=2119389423 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(3878, -1150)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
-[node name="Drone15" parent="Drones" unique_id=2120105906 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone15" parent="Drones" unique_id=2120105906 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(3752, -959)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
-[node name="Drone16" parent="Drones" unique_id=459656987 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone16" parent="Drones" unique_id=459656987 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(3752, -885)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
-[node name="Drone17" parent="Drones" unique_id=1640337637 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone17" parent="Drones" unique_id=1640337637 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(3752, -815)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
-[node name="Drone18" parent="Drones" unique_id=187619051 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone18" parent="Drones" unique_id=187619051 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(3752, -738)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
-[node name="Drone19" parent="Drones" unique_id=2072742793 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone19" parent="Drones" unique_id=2072742793 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(3752, -657)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
-[node name="Drone9" parent="Drones" unique_id=1321858713 node_paths=PackedStringArray("Terra") instance=ExtResource("5_r7t3j")]
+[node name="Drone9" parent="Drones" unique_id=1321858713 node_paths=PackedStringArray("Ar") instance=ExtResource("5_r7t3j")]
 position = Vector2(3463, -733)
-Terra = NodePath("../../Terra")
+Ar = NodePath("../../Ar")
 
 [node name="AirMask" parent="." unique_id=1454800492 instance=ExtResource("6_jwy3e")]
 position = Vector2(4002, -1104)
+
+[node name="Killzone" parent="." unique_id=1413315520 node_paths=PackedStringArray("Ar") instance=ExtResource("8_8v7sy")]
+position = Vector2(964, 648)
+Ar = NodePath("../Ar")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1752210937]
+shape = SubResource("WorldBoundaryShape2D_tqg3p")
