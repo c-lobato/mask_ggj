@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bugmowx8w2m8g" path="res://scenes/bouncing_cloud.tscn" id="3_dpmm0"]
 [ext_resource type="PackedScene" uid="uid://cesem8hm7ndis" path="res://scenes/cloud.tscn" id="4_r7t3j"]
 [ext_resource type="PackedScene" uid="uid://crmruejnc2x3x" path="res://scenes/drone.tscn" id="5_r7t3j"]
-[ext_resource type="PackedScene" uid="uid://b3b8buc7nr7el" path="res://scenes/air_mask.tscn" id="6_jwy3e"]
+[ext_resource type="PackedScene" uid="uid://b3b8buc7nr7el" path="res://scenes/masks/air_mask.tscn" id="6_jwy3e"]
 
 [sub_resource type="Gradient" id="Gradient_rqfva"]
 colors = PackedColorArray(0.46816152, 0.17877275, 0.541929, 1, 0.83284587, 0.5128128, 7.70092e-07, 1)

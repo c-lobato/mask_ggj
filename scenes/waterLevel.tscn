@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dq147237m1opl"]
+
+[ext_resource type="Texture2D" uid="uid://cbft811ajlwdn" path="res://assets/sprites/level/DirtLayer.png" id="1_byac7"]
+[ext_resource type="Texture2D" uid="uid://cn61hnpv3016f" path="res://assets/sprites/level/WaterSoil.png" id="2_7nc8p"]
+[ext_resource type="PackedScene" uid="uid://b8f2arpts6uog" path="res://scenes/terra.tscn" id="4_8o5h3"]
+
+[node name="WaterLevel" type="Node2D" unique_id=1854936665]
+
+[node name="CloseWater" type="CanvasLayer" parent="." unique_id=1330878116]
+
+[node name="CloseWaterRect" type="ColorRect" parent="CloseWater" unique_id=683005253]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.39215687, 0.8627451, 0.98039216, 0.28627452)
+
+[node name="WaterBackground" type="CanvasLayer" parent="." unique_id=400647772]
+layer = -1
+
+[node name="WaterBackgroundRect" type="ColorRect" parent="WaterBackground" unique_id=380708448]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(6.256998e-07, 0, 0.3427, 1)
+
+[node name="LevelLayers" type="Parallax2D" parent="." unique_id=1039092273]
+
+[node name="SoilParalax" type="Parallax2D" parent="LevelLayers" unique_id=975239686]
+repeat_size = Vector2(384, 0)
+
+[node name="DirtSprite" type="Sprite2D" parent="LevelLayers/SoilParalax" unique_id=2000274164]
+position = Vector2(192, 662)
+texture = ExtResource("1_byac7")
+
+[node name="SoilSprite" type="Sprite2D" parent="LevelLayers/SoilParalax" unique_id=687245796]
+position = Vector2(192, 540)
+texture = ExtResource("2_7nc8p")
+
+[node name="SoilSprite2" type="Sprite2D" parent="LevelLayers/SoilParalax" unique_id=823242092]
+position = Vector2(576, 540)
+texture = ExtResource("2_7nc8p")
+
+[node name="SoilSprite3" type="Sprite2D" parent="LevelLayers/SoilParalax" unique_id=462460664]
+position = Vector2(959, 540)
+texture = ExtResource("2_7nc8p")
+
+[node name="Terra" parent="." unique_id=430751878 instance=ExtResource("4_8o5h3")]
+position = Vector2(193, 540)
+
+[node name="Camera2D" type="Camera2D" parent="Terra" unique_id=1761318632]
+zoom = Vector2(3, 3)
