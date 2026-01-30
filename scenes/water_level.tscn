@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://btc3jmoynfode"]
+
+[ext_resource type="Texture2D" uid="uid://djcurrxkbphw5" path="res://assets/tiles/tile.png" id="1_mqsrv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mrhx8"]
+texture = ExtResource("1_mqsrv")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_bm2uj"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_mrhx8")
+
+[node name="WaterLevel" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tiles" type="Node2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Tiles"]
+tile_set = SubResource("TileSet_bm2uj")
