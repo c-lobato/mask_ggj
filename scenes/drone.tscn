@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://crmruejnc2x3x"]
+[gd_scene load_steps=0 format=3 uid="uid://crmruejnc2x3x"]
 
 [ext_resource type="Texture2D" uid="uid://un7kmkhbdmsx" path="res://assets/sprites/Drone.png" id="1_dil0n"]
 [ext_resource type="Script" uid="uid://dgrcoae6t7v5o" path="res://scripts/Drone.cs" id="1_knnud"]
