@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://733xcw31gdxt"
-path="res://.godot/imported/maskAgua.png-470e9096b42a19ef180335b58a7627c7.ctex"
+path="res://.godot/imported/maskAgua.png-af1774048ca208347d64a2a440e42784.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mask-ggj/assets/sprites/Masks/maskAgua.png"
-dest_files=["res://.godot/imported/maskAgua.png-470e9096b42a19ef180335b58a7627c7.ctex"]
+source_file="res://assets/sprites/Masks/maskAgua.png"
+dest_files=["res://.godot/imported/maskAgua.png-af1774048ca208347d64a2a440e42784.ctex"]
 
 [params]
 

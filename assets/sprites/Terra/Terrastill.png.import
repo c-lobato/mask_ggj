@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0lw88li61mr4"
-path="res://.godot/imported/Terrastill.png-d79c905f8c1a696d143ee399653ea4f1.ctex"
+path="res://.godot/imported/Terrastill.png-c91be9170798802de3cdcfc39e7fc824.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mask-ggj/assets/sprites/Terra/Terrastill.png"
-dest_files=["res://.godot/imported/Terrastill.png-d79c905f8c1a696d143ee399653ea4f1.ctex"]
+source_file="res://assets/sprites/Terra/Terrastill.png"
+dest_files=["res://.godot/imported/Terrastill.png-c91be9170798802de3cdcfc39e7fc824.ctex"]
 
 [params]
 

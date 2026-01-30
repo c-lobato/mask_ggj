@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlp23cise5qnj"
-path="res://.godot/imported/Aguajump.png-7dd2785cdbd6d453b3ccae32ba2443b1.ctex"
+path="res://.godot/imported/Aguajump.png-6514cb4c867f9c81b744f81f81640d73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mask-ggj/assets/sprites/Agua/Aguajump.png"
-dest_files=["res://.godot/imported/Aguajump.png-7dd2785cdbd6d453b3ccae32ba2443b1.ctex"]
+source_file="res://assets/sprites/Agua/Aguajump.png"
+dest_files=["res://.godot/imported/Aguajump.png-6514cb4c867f9c81b744f81f81640d73.ctex"]
 
 [params]
 

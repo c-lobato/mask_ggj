@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfkg15yes0s0"
-path="res://.godot/imported/aguaStill.png-e82100b15e5df139ed55c6594ab11632.ctex"
+path="res://.godot/imported/aguaStill.png-ef881c21271e19d6c48692d7f80d1783.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mask-ggj/assets/sprites/Agua/aguaStill.png"
-dest_files=["res://.godot/imported/aguaStill.png-e82100b15e5df139ed55c6594ab11632.ctex"]
+source_file="res://assets/sprites/Agua/aguaStill.png"
+dest_files=["res://.godot/imported/aguaStill.png-ef881c21271e19d6c48692d7f80d1783.ctex"]
 
 [params]
 

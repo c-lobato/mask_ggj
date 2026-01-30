@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://by5a2fgpbxdcx"
-path="res://.godot/imported/Arfall.png-254e585f9e31550c8a06912ad9d1f4b7.ctex"
+path="res://.godot/imported/Arfall.png-fc4e7446168491d6e9079e17de8dab13.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mask-ggj/assets/sprites/Ar/Arfall.png"
-dest_files=["res://.godot/imported/Arfall.png-254e585f9e31550c8a06912ad9d1f4b7.ctex"]
+source_file="res://assets/sprites/Ar/Arfall.png"
+dest_files=["res://.godot/imported/Arfall.png-fc4e7446168491d6e9079e17de8dab13.ctex"]
 
 [params]
 

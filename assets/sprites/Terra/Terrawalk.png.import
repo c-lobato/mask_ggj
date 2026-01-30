@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://doij0toi73b0w"
-path="res://.godot/imported/Terrawalk.png-cefce30fb94abf2d8c01a0cc22158801.ctex"
+path="res://.godot/imported/Terrawalk.png-74aad498e08802af4c278976d37ccc22.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mask-ggj/assets/sprites/Terra/Terrawalk.png"
-dest_files=["res://.godot/imported/Terrawalk.png-cefce30fb94abf2d8c01a0cc22158801.ctex"]
+source_file="res://assets/sprites/Terra/Terrawalk.png"
+dest_files=["res://.godot/imported/Terrawalk.png-74aad498e08802af4c278976d37ccc22.ctex"]
 
 [params]
 

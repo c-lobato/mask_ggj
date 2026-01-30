@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://du78i7a6wdmji"
-path="res://.godot/imported/Aguawalk.png-e76d3858f3eafe3c8464bb96034dbc16.ctex"
+path="res://.godot/imported/Aguawalk.png-c512097ba9674b64e7fa486339ed9364.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mask-ggj/assets/sprites/Agua/Aguawalk.png"
-dest_files=["res://.godot/imported/Aguawalk.png-e76d3858f3eafe3c8464bb96034dbc16.ctex"]
+source_file="res://assets/sprites/Agua/Aguawalk.png"
+dest_files=["res://.godot/imported/Aguawalk.png-c512097ba9674b64e7fa486339ed9364.ctex"]
 
 [params]
 
