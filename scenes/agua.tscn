@@ -1,7 +1,11 @@
-[gd_scene format=3 uid="uid://c7rikkbtsihu5"]
+[gd_scene format=3 uid="uid://di7i1r6dhr7qr"]
 
+[ext_resource type="Script" uid="uid://c2skj0ed04pgi" path="res://scripts/Agua/Agua.cs" id="1_wew8i"]
 [ext_resource type="Texture2D" uid="uid://cfpnwm4201eyb" path="res://assets/sprites/Agua/Aguafall.png" id="1_wrhic"]
 [ext_resource type="Texture2D" uid="uid://dlp23cise5qnj" path="res://assets/sprites/Agua/Aguajump.png" id="2_astc6"]
+[ext_resource type="Script" uid="uid://1ewt87as03kn" path="res://scripts/StateMachine.cs" id="4_82536"]
+[ext_resource type="Script" uid="uid://tesvd4bsl073" path="res://scripts/Agua/SwimUpState.cs" id="5_1jbcv"]
+[ext_resource type="Script" uid="uid://874aakhip0cf" path="res://scripts/Agua/SwimDownState.cs" id="6_gx42f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pqq6q"]
 atlas = ExtResource("1_wrhic")
@@ -59,7 +63,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_82536")
 }],
 "loop": true,
-"name": &"new_animation",
+"name": &"swimdownstate",
 "speed": 5.0
 }, {
 "frames": [{
@@ -89,19 +93,28 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u2lee"]
 size = Vector2(4, 16)
 
-[node name="Agua" type="CharacterBody2D" unique_id=1385341485]
+[node name="Agua" type="CharacterBody2D" unique_id=1385341485 node_paths=PackedStringArray("Animation")]
+script = ExtResource("1_wew8i")
+Animation = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=24598210]
 sprite_frames = SubResource("SpriteFrames_amdvs")
-animation = &"new_animation"
-frame_progress = 0.97550404
+animation = &"swimdownstate"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1700625825]
 position = Vector2(1, -2)
 shape = SubResource("RectangleShape2D_u2lee")
 
-[node name="StateMachine" type="Node" parent="." unique_id=1138628523]
+[node name="StateMachine" type="Node" parent="." unique_id=1138628523 node_paths=PackedStringArray("InitialState")]
+script = ExtResource("4_82536")
+InitialState = NodePath("SwimDownState")
 
-[node name="SwimUpState" type="Node" parent="StateMachine" unique_id=1213155693]
+[node name="SwimUpState" type="Node" parent="StateMachine" unique_id=1213155693 node_paths=PackedStringArray("Character", "Agua")]
+script = ExtResource("5_1jbcv")
+Character = NodePath("../..")
+Agua = NodePath("../..")
 
-[node name="SwimDownState" type="Node" parent="StateMachine" unique_id=1643477989]
+[node name="SwimDownState" type="Node" parent="StateMachine" unique_id=1643477989 node_paths=PackedStringArray("Character", "Agua")]
+script = ExtResource("6_gx42f")
+Character = NodePath("../..")
+Agua = NodePath("../..")
