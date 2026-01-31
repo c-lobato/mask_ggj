@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cublnshqxpfug"]
+
+[ext_resource type="Script" uid="uid://cdh6t8nsdwfde" path="res://scripts/boss/Boss.cs" id="1_dgf3a"]
+[ext_resource type="Texture2D" uid="uid://d1vwckiohheao" path="res://assets/sprites/spr_robo.png" id="2_8ftqf"]
+[ext_resource type="Script" uid="uid://dvn4s2akdbe10" path="res://scripts/boss/stateManagement/BossStateMachine.cs" id="3_atjq5"]
+[ext_resource type="Script" uid="uid://d2x8h0x2agxdj" path="res://scripts/boss/states/BossWalk.cs" id="4_0xsra"]
+[ext_resource type="Script" uid="uid://co2prdjmgwrdf" path="res://scripts/boss/states/BossIdle.cs" id="4_iva7r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dq6vu"]
+radius = 16.03122
+
+[node name="Boss" type="CharacterBody2D" unique_id=1892716172 node_paths=PackedStringArray("BStateMachine")]
+script = ExtResource("1_dgf3a")
+BStateMachine = NodePath("BossStateMachine")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=238684962]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("2_8ftqf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=366917296]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_dq6vu")
+
+[node name="BossStateMachine" type="Node2D" parent="." unique_id=1492813380 node_paths=PackedStringArray("InitialState", "StateLabel")]
+script = ExtResource("3_atjq5")
+InitialState = NodePath("BossIdle")
+StateLabel = NodePath("../Label")
+
+[node name="BossIdle" type="Node2D" parent="BossStateMachine" unique_id=736075694 node_paths=PackedStringArray("BossNode")]
+script = ExtResource("4_iva7r")
+BossNode = NodePath("../..")
+
+[node name="BossWalk" type="Node2D" parent="BossStateMachine" unique_id=121943534 node_paths=PackedStringArray("BossNode")]
+script = ExtResource("4_0xsra")
+BossNode = NodePath("../..")
+
+[node name="Label" type="Label" parent="." unique_id=635550849]
+offset_left = -32.0
+offset_top = -44.0
+offset_right = 32.0
+offset_bottom = -14.0
+theme_override_font_sizes/font_size = 20
+text = "debug"
