@@ -15,7 +15,7 @@ public partial class MenuUi : Control
 
 	public void onStartPressed()
 	{
-		GetTree().ChangeSceneToFile("res://scenes/terra.tscn");
+		GetTree().ChangeSceneToFile("res://scenes/level_air.tscn");
 	}
 
 	public void onExitPressed()

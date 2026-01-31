@@ -1,6 +1,5 @@
 using Godot;
 using System;
-using System.Numerics;
 using System.Runtime.InteropServices;
 
 public partial class Submarine : RigidBody2D
@@ -26,11 +25,11 @@ public partial class Submarine : RigidBody2D
     {
         state.LinearVelocity = state.LinearVelocity.Normalized() * speed;
 
-		if (state.LinearVelocity.X > 0.5f)
+		if (state.LinearVelocity.X > 0.1f)
 		{
 			animatedSprite.FlipH = false;
 		} 
-		else if (state.LinearVelocity.X < -0.5f)
+		else if (state.LinearVelocity.X < -0.1f)
 		{
 			animatedSprite.FlipH = true;
 		}
@@ -48,15 +47,14 @@ public partial class Submarine : RigidBody2D
         if (ProjectileScene == null) return;
 
         var projetil = (Node2D)ProjectileScene.Instantiate();
-        // [Inference] Usar GlobalPosition para garantir que o tiro saia do lugar certo no mundo
-        projetil.GlobalPosition = GlobalPosition;
         GetParent().AddChild(projetil);
+		projetil.GlobalPosition = GlobalPosition;
 
         if (projetil is Projectile p) 
         {
-            // Se o LinearVelocity.X for positivo, vai para a direita (1), senão esquerda (-1)
-            p.XDirection = LinearVelocity.X > 0 ? 1 : -1;
-        }
+            int dir = animatedSprite.FlipH ? -1 : 1;
+        	p.SetDirection(dir);
+		}
     }
 
 

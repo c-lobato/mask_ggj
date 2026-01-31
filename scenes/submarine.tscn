@@ -114,8 +114,8 @@ animations = [{
 "speed": 14.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a23f2"]
-size = Vector2(20, 12)
+[sub_resource type="CircleShape2D" id="CircleShape2D_cjhfg"]
+radius = 8.0
 
 [node name="Submarine" type="RigidBody2D" unique_id=418129342 node_paths=PackedStringArray("animatedSprite")]
 physics_material_override = SubResource("PhysicsMaterial_cjhfg")
@@ -131,7 +131,7 @@ frame_progress = 0.88562125
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=304534448]
 position = Vector2(7, 0)
-shape = SubResource("RectangleShape2D_a23f2")
+shape = SubResource("CircleShape2D_cjhfg")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=838379347]
 position = Vector2(7, 0)

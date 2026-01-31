@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://bglows6qwascf" path="res://assets/tiles/WaterLevel/Tilegrass4.png" id="8_b40ww"]
 [ext_resource type="Texture2D" uid="uid://covlc1pvaioi0" path="res://assets/tiles/WaterLevel/Tilegrass5.png" id="9_vle8g"]
 [ext_resource type="PackedScene" uid="uid://di7i1r6dhr7qr" path="res://scenes/agua.tscn" id="10_gqxpp"]
+[ext_resource type="AudioStream" uid="uid://d02b8nrexan4s" path="res://assets/Music/musica_faseagua.ogg" id="11_3gb4g"]
+[ext_resource type="PackedScene" uid="uid://j05i2k36oql3" path="res://scenes/masks/water_mask.tscn" id="12_lk4w1"]
 
 [sub_resource type="Environment" id="Environment_gqxpp"]
 background_mode = 3
@@ -115,17 +117,14 @@ color = Color(0, 0, 0.18431373, 1)
 environment = SubResource("Environment_gqxpp")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1713901326]
-visible = false
 position = Vector2(2294, 287.50003)
 scale = Vector2(30.343748, 3097.0002)
 texture = SubResource("GradientTexture1D_lk4w1")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=81568138]
-visible = false
 color = Color(0.032439165, 0.4476722, 0.60170054, 1)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=663081804]
-visible = false
 color = Color(0.6504911, 0.5701373, 0.34134176, 1)
 energy = 0.7
 blend_mode = 1
@@ -152,8 +151,8 @@ scroll_scale = Vector2(1.2, 1.2)
 scroll_offset = Vector2(1, 0)
 
 [node name="Foreground" type="Sprite2D" parent="Foreground" unique_id=133515362]
-position = Vector2(995.97687, 321.50003)
-scale = Vector2(0.17118888, 0.23729387)
+position = Vector2(1052.5, 312.50003)
+scale = Vector2(0.18760741, 0.25546956)
 texture = ExtResource("6_egv78")
 
 [node name="Tiles" type="Node2D" parent="." unique_id=1480706810]
@@ -174,10 +173,38 @@ position = Vector2(584, 579)
 [node name="Submarine3" parent="Submarines" unique_id=1455124747 instance=ExtResource("5_7nc8p")]
 position = Vector2(209, 483)
 
-[node name="Agua" parent="." unique_id=1385341485 instance=ExtResource("10_gqxpp")]
+[node name="Submarine4" parent="Submarines" unique_id=730494655 instance=ExtResource("5_7nc8p")]
+position = Vector2(1030, 249)
+
+[node name="Submarine5" parent="Submarines" unique_id=1613623444 instance=ExtResource("5_7nc8p")]
+position = Vector2(1114, 387)
+
+[node name="Submarine6" parent="Submarines" unique_id=590350292 instance=ExtResource("5_7nc8p")]
+position = Vector2(1290, 236)
+
+[node name="Submarine7" parent="Submarines" unique_id=2029307607 instance=ExtResource("5_7nc8p")]
+position = Vector2(1205, 69)
+
+[node name="Submarine8" parent="Submarines" unique_id=683527681 instance=ExtResource("5_7nc8p")]
+position = Vector2(968, 493)
+
+[node name="Submarine9" parent="Submarines" unique_id=1925167297 instance=ExtResource("5_7nc8p")]
+position = Vector2(754, 162)
+
+[node name="Submarine10" parent="Submarines" unique_id=87424493 instance=ExtResource("5_7nc8p")]
+position = Vector2(1466, 554)
+
+[node name="Submarine11" parent="Submarines" unique_id=1232404775 instance=ExtResource("5_7nc8p")]
+position = Vector2(1674, 269)
+
+[node name="Submarine12" parent="Submarines" unique_id=1966173275 instance=ExtResource("5_7nc8p")]
+position = Vector2(1869, 162)
+
+[node name="Agua" parent="." unique_id=1385341485 groups=["Player"] instance=ExtResource("10_gqxpp")]
 position = Vector2(195, 364)
 
 [node name="Camera2D" type="Camera2D" parent="Agua" unique_id=1761282877]
+zoom = Vector2(3, 3)
 limit_left = 0
 limit_top = 0
 limit_bottom = 648
@@ -190,3 +217,12 @@ texture = SubResource("GradientTexture2D_p5qwb")
 amount = 30
 visibility_rect = Rect2(-250, -125, 500, 250)
 process_material = SubResource("ParticleProcessMaterial_gqxpp")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=107946960]
+stream = ExtResource("11_3gb4g")
+volume_db = -10.0
+autoplay = true
+max_distance = 4096.0
+
+[node name="WaterMask" parent="." unique_id=1388274368 instance=ExtResource("12_lk4w1")]
+position = Vector2(2027, 362)
