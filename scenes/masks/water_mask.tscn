@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://j05i2k36oql3"]
 
-[ext_resource type="Texture2D" uid="uid://733xcw31gdxt" path="res://assets/sprites/Masks/maskAgua.png" id="1_hfv26"]
+[ext_resource type="Script" uid="uid://cbtgnkkxjjosr" path="res://scripts/WaterMask.cs" id="1_8uo5t"]
+[ext_resource type="Texture2D" uid="uid://733xcw31gdxt" path="res://assets/sprites/maskAgua.png" id="1_hfv26"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aflak"]
 atlas = ExtResource("1_hfv26")
@@ -77,19 +78,19 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 10.0
+"speed": 12.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6d77n"]
 radius = 5.1
 
 [node name="WaterMask" type="Area2D" unique_id=1388274368]
+script = ExtResource("1_8uo5t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=845731385]
 sprite_frames = SubResource("SpriteFrames_wrhpx")
 autoplay = "default"
-frame = 5
-frame_progress = 0.7544926
+frame_progress = 0.07515582
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=546701130]
 shape = SubResource("CircleShape2D_6d77n")

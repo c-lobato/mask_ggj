@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b3b8buc7nr7el"]
 
-[ext_resource type="Texture2D" uid="uid://dwocbqxui53w4" path="res://assets/sprites/Masks/maskAr.png" id="1_4l1v6"]
+[ext_resource type="Texture2D" uid="uid://dwocbqxui53w4" path="res://assets/sprites/maskAr.png" id="1_4l1v6"]
+[ext_resource type="Script" uid="uid://duo5yl6cbu26k" path="res://scripts/AirMask.cs" id="1_6iwmt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w28eo"]
 atlas = ExtResource("1_4l1v6")
@@ -84,6 +85,7 @@ animations = [{
 radius = 5.0990195
 
 [node name="AirMask" type="Area2D" unique_id=1454800492]
+script = ExtResource("1_6iwmt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=434876579]
 sprite_frames = SubResource("SpriteFrames_6vxht")
@@ -93,3 +95,5 @@ frame_progress = 0.59362704
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1770497855]
 shape = SubResource("CircleShape2D_0y65i")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

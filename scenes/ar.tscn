@@ -1,9 +1,19 @@
-[gd_scene format=3 uid="uid://b33pkbx1hwkq8"]
+[gd_scene format=3 uid="uid://b4yjc8iwfvvym"]
 
+[ext_resource type="Script" uid="uid://e6c1wk6egadk" path="res://scripts/Ar/Ar.cs" id="1_oqu6l"]
 [ext_resource type="Texture2D" uid="uid://by5a2fgpbxdcx" path="res://assets/sprites/Ar/Arfall.png" id="1_xw7em"]
 [ext_resource type="Texture2D" uid="uid://cvwu3qtxkxlu7" path="res://assets/sprites/Ar/Arstill.png" id="2_oqu6l"]
 [ext_resource type="Texture2D" uid="uid://civufc62w4gp3" path="res://assets/sprites/Ar/Arjump.png" id="3_rb3gj"]
 [ext_resource type="Texture2D" uid="uid://bwbb2l8ggftsx" path="res://assets/sprites/Ar/Arwalk.png" id="4_enp7x"]
+[ext_resource type="Script" uid="uid://1ewt87as03kn" path="res://scripts/StateMachine.cs" id="6_kr7ac"]
+[ext_resource type="Script" uid="uid://boc8m4a8htvjc" path="res://scripts/Ar/AirWalkState.cs" id="7_7n371"]
+[ext_resource type="Script" uid="uid://cc8jhs7e0kybh" path="res://scripts/Ar/AirFallState.cs" id="8_gt1si"]
+[ext_resource type="Script" uid="uid://diy7aj5mbjpd" path="res://scripts/Ar/AirJumpState.cs" id="9_mqt30"]
+[ext_resource type="Script" uid="uid://djroywfahwqa2" path="res://scripts/Ar/AirIdleState.cs" id="10_1wx3v"]
+[ext_resource type="Script" uid="uid://bspqvjlmlpbd6" path="res://scripts/Ar/AirDashState.cs" id="11_7n371"]
+[ext_resource type="AudioStream" uid="uid://d3wnfo0220dog" path="res://assets/SFX/andar.ogg" id="12_1wx3v"]
+[ext_resource type="AudioStream" uid="uid://ir8hp7kmkh0t" path="res://assets/SFX/dash.ogg" id="13_sqv3p"]
+[ext_resource type="AudioStream" uid="uid://creftbufphkei" path="res://assets/SFX/pulo.ogg" id="14_q2dm2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0jtvw"]
 atlas = ExtResource("1_xw7em")
@@ -101,7 +111,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_7n371")
 }],
 "loop": true,
-"name": &"fallstate",
+"name": &"airfallstate",
 "speed": 5.0
 }, {
 "frames": [{
@@ -121,7 +131,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_q2dm2")
 }],
 "loop": true,
-"name": &"idlestate",
+"name": &"airidlestate",
 "speed": 6.0
 }, {
 "frames": [{
@@ -138,7 +148,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_eguys")
 }],
 "loop": true,
-"name": &"jumpstate",
+"name": &"airjumpstate",
 "speed": 5.0
 }, {
 "frames": [{
@@ -164,33 +174,66 @@ animations = [{
 "texture": SubResource("AtlasTexture_j48e3")
 }],
 "loop": true,
-"name": &"walkstate",
+"name": &"airwalkstate",
 "speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4rwbd"]
 size = Vector2(9, 23)
 
-[node name="Ar" type="CharacterBody2D" unique_id=482346309]
+[node name="Ar" type="CharacterBody2D" unique_id=482346309 node_paths=PackedStringArray("Animation", "SfxWalk", "SfxDash", "SfxJump", "Hitbox")]
+script = ExtResource("1_oqu6l")
+Animation = NodePath("AnimatedSprite2D")
+SfxWalk = NodePath("SFX/SfxWalk")
+SfxDash = NodePath("SFX/SfxDash")
+SfxJump = NodePath("SFX/Sfxjump")
+Hitbox = NodePath("CollisionShape2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2140073194]
 sprite_frames = SubResource("SpriteFrames_ex7on")
-animation = &"walkstate"
-autoplay = "idlestate"
-frame_progress = 0.5753856
+animation = &"airwalkstate"
+autoplay = "airidlestate"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1716423173]
 position = Vector2(2.5, 1.5)
 shape = SubResource("RectangleShape2D_4rwbd")
 
-[node name="StateMachine" type="Node" parent="." unique_id=1869057135]
+[node name="StateMachine" type="Node" parent="." unique_id=1869057135 node_paths=PackedStringArray("InitialState")]
+script = ExtResource("6_kr7ac")
+InitialState = NodePath("AirIdleState")
 
-[node name="WalkState" type="Node" parent="StateMachine" unique_id=41954970]
+[node name="AirWalkState" type="Node" parent="StateMachine" unique_id=41954970 node_paths=PackedStringArray("Character", "Ar")]
+script = ExtResource("7_7n371")
+Character = NodePath("../..")
+Ar = NodePath("../..")
 
-[node name="FallState" type="Node" parent="StateMachine" unique_id=1273550071]
+[node name="AirFallState" type="Node" parent="StateMachine" unique_id=1273550071 node_paths=PackedStringArray("Character", "Ar")]
+script = ExtResource("8_gt1si")
+Character = NodePath("../..")
+Ar = NodePath("../..")
 
-[node name="JumpState" type="Node" parent="StateMachine" unique_id=1800961894]
+[node name="AirJumpState" type="Node" parent="StateMachine" unique_id=1800961894 node_paths=PackedStringArray("Character", "Ar")]
+script = ExtResource("9_mqt30")
+Character = NodePath("../..")
+Ar = NodePath("../..")
 
-[node name="IdleState" type="Node" parent="StateMachine" unique_id=1743494198]
+[node name="AirIdleState" type="Node" parent="StateMachine" unique_id=1743494198 node_paths=PackedStringArray("Character", "Ar")]
+script = ExtResource("10_1wx3v")
+Character = NodePath("../..")
+Ar = NodePath("../..")
 
-[node name="DashState" type="Node" parent="StateMachine" unique_id=487777956]
+[node name="AirDashState" type="Node" parent="StateMachine" unique_id=487777956 node_paths=PackedStringArray("Character", "Ar")]
+script = ExtResource("11_7n371")
+Character = NodePath("../..")
+Ar = NodePath("../..")
+
+[node name="SFX" type="Node" parent="." unique_id=490816334]
+
+[node name="SfxWalk" type="AudioStreamPlayer" parent="SFX" unique_id=340662333]
+stream = ExtResource("12_1wx3v")
+
+[node name="SfxDash" type="AudioStreamPlayer" parent="SFX" unique_id=740287235]
+stream = ExtResource("13_sqv3p")
+
+[node name="Sfxjump" type="AudioStreamPlayer" parent="SFX" unique_id=930478427]
+stream = ExtResource("14_q2dm2")
