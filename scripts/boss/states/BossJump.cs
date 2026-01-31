@@ -4,7 +4,7 @@ using System;
 public partial class BossJump : BossState
 {
     [Export] public float BJumpForce = -600.0f;
-    [Export] public float BHorizontalBoost = 250.0f;
+    [Export] public float BHorizontalBoost = 100.0f;
     [Export] public PackedScene DustEffect; // Arraste seu efeito de poeira aqui
 
     private bool _hasLeftGround = false;

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cc7cgvfhnrhxt"
-path="res://.godot/imported/floresta level midg.png-a8f0e895500e965389736e717899b582.ctex"
+path="res://.godot/imported/floresta level midg.png-076d45dcc615519ae02dc6c149b24528.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/floresta level midg.png"
-dest_files=["res://.godot/imported/floresta level midg.png-a8f0e895500e965389736e717899b582.ctex"]
+source_file="res://assets/tiles/floresta level midg.png"
+dest_files=["res://.godot/imported/floresta level midg.png-076d45dcc615519ae02dc6c149b24528.ctex"]
 
 [params]
 
