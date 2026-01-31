@@ -4,6 +4,10 @@
 [ext_resource type="Script" uid="uid://yp4yowu0pnuv" path="res://scripts/Submarine.cs" id="1_r3h5y"]
 [ext_resource type="PackedScene" uid="uid://x3lairx0iq6e" path="res://scenes/projetil.tscn" id="2_cjhfg"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cjhfg"]
+friction = 0.0
+bounce = 1.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_r3h5y"]
 atlas = ExtResource("1_gua2t")
 region = Rect2(0, 0, 36, 27)
@@ -114,11 +118,11 @@ animations = [{
 size = Vector2(20, 12)
 
 [node name="Submarine" type="RigidBody2D" unique_id=418129342 node_paths=PackedStringArray("animatedSprite")]
-collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_cjhfg")
 gravity_scale = 0.0
+lock_rotation = true
 script = ExtResource("1_r3h5y")
 animatedSprite = NodePath("AnimatedSprite2D")
-walkLimit = 120.0
 ProjectileScene = ExtResource("2_cjhfg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=575968484]
