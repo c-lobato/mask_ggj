@@ -9,16 +9,13 @@ public partial class Projectile : Area2D
 
     public override void _Ready()
     {
-        // Conecta o sinal de que algo entrou na área do torpedo
-        BodyEntered += OnBodyEntered;
+        BodyEntered += OnBodyEntered; // Conexão do sinal
     }
 
     private void OnBodyEntered(Node2D body)
 {
     if (body.Name == "Agua" || body.IsInGroup("Player"))
-    {
-        GD.Print("Player atingido! Reiniciando de forma segura...");
-        
+    {        
         GetTree().CallDeferred(SceneTree.MethodName.ReloadCurrentScene);
     }
     

@@ -14,12 +14,10 @@ public partial class WaterMask : Area2D
 
     private void OnBodyEntered(Node2D body)
     {
-        // Verifica se o Player (Agua) entrou no trigger
         if (body.Name == "Agua" || body.IsInGroup("Player"))
         {
             if (!string.IsNullOrEmpty(MenuScenePath))
             {
-                // Uso do CallDeferred para evitar o erro de física que vimos antes
                 GetTree().CallDeferred(SceneTree.MethodName.ChangeSceneToFile, MenuScenePath);
             }
             else

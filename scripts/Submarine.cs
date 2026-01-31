@@ -56,24 +56,5 @@ public partial class Submarine : RigidBody2D
         	p.SetDirection(dir);
 		}
     }
-
-
-	/*
-	public override void _Process(double delta)
-	{
-		if (walkedDistance <= walkLimit)
-		{
-			Position += new Vector2I(speed, 0);
-			walkedDistance += Math.Abs(speed);
-		}
-		else
-		{
-			walkedDistance = 0;
-			animatedSprite.FlipH = !animatedSprite.FlipH;
-			speed *= -1;
-		}
-	}
-	*/
-
 	
 }
