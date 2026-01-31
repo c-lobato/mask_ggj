@@ -46,7 +46,7 @@ public partial class BossWalk : BossState
 		_timer += (float)delta;
         if (_timer >= BWalkTime)
         {
-            BStateMachine.ChangeState("BossIdle");
+            BStateMachine.ChangeState("BossJump");
         }
 
     }

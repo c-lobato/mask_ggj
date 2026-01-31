@@ -14,8 +14,7 @@ public partial class BossStateMachine : Node2D
     {
         // Usamos um timer curto para garantir que o Boss e o Player já nasceram
         CallDeferred(MethodName.InitializeStateMachine);
-		
-
+	
     }
 
     private void InitializeStateMachine()

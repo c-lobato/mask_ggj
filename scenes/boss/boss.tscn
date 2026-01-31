@@ -5,11 +5,15 @@
 [ext_resource type="Script" uid="uid://dvn4s2akdbe10" path="res://scripts/boss/stateManagement/BossStateMachine.cs" id="3_atjq5"]
 [ext_resource type="Script" uid="uid://d2x8h0x2agxdj" path="res://scripts/boss/states/BossWalk.cs" id="4_0xsra"]
 [ext_resource type="Script" uid="uid://co2prdjmgwrdf" path="res://scripts/boss/states/BossIdle.cs" id="4_iva7r"]
+[ext_resource type="Script" uid="uid://bqdp1mpx6bp5y" path="res://scripts/boss/states/BossJump.cs" id="6_i4fbv"]
+[ext_resource type="Script" uid="uid://7uwhn2q6ny87" path="res://scripts/boss/states/BossFall.cs" id="7_wf233"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dq6vu"]
 radius = 16.03122
 
 [node name="Boss" type="CharacterBody2D" unique_id=1892716172 node_paths=PackedStringArray("BStateMachine")]
+collision_layer = 3
+collision_mask = 2
 script = ExtResource("1_dgf3a")
 BStateMachine = NodePath("BossStateMachine")
 
@@ -32,6 +36,14 @@ BossNode = NodePath("../..")
 
 [node name="BossWalk" type="Node2D" parent="BossStateMachine" unique_id=121943534 node_paths=PackedStringArray("BossNode")]
 script = ExtResource("4_0xsra")
+BossNode = NodePath("../..")
+
+[node name="BossJump" type="Node2D" parent="BossStateMachine" unique_id=1739746295 node_paths=PackedStringArray("BossNode")]
+script = ExtResource("6_i4fbv")
+BossNode = NodePath("../..")
+
+[node name="BollFall" type="Node2D" parent="BossStateMachine" unique_id=1284993751 node_paths=PackedStringArray("BossNode")]
+script = ExtResource("7_wf233")
 BossNode = NodePath("../..")
 
 [node name="Label" type="Label" parent="." unique_id=635550849]
