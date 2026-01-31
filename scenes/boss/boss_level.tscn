@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cublnshqxpfug" path="res://scenes/boss/boss.tscn" id="2_jc88n"]
 [ext_resource type="PackedScene" uid="uid://b8f2arpts6uog" path="res://scenes/terra.tscn" id="3_ojgwx"]
 [ext_resource type="Script" uid="uid://bojv4kulre8rl" path="res://scripts/map/BossDoor.cs" id="4_ojgwx"]
+[ext_resource type="Texture2D" uid="uid://duenwc32pc3pu" path="res://assets/tiles/spr_bossdoor.png" id="5_ajqmb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3bk3y"]
 texture = ExtResource("1_jsaec")
@@ -183,6 +184,8 @@ texture = ExtResource("1_jsaec")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_3bk3y")
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ajqmb"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_717oy"]
 size = Vector2(20, 95)
 
@@ -224,14 +227,23 @@ position = Vector2(8, 463)
 position = Vector2(-1, 0)
 zoom = Vector2(2, 2)
 
-[node name="PortaBoss" type="Node" parent="." unique_id=1457587461]
+[node name="PortaBoss" type="Node2D" parent="." unique_id=1495192848 node_paths=PackedStringArray("corpoFisico", "colisaoPorta", "spritePorta")]
 script = ExtResource("4_ojgwx")
+corpoFisico = NodePath("StaticBody2D")
+colisaoPorta = NodePath("Area2D2/CollisionShape2D")
+spritePorta = NodePath("StaticBody2D/Sprite2D")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="PortaBoss" unique_id=1197902177]
-position = Vector2(407.5, 570)
+position = Vector2(326, 384)
+physics_material_override = SubResource("PhysicsMaterial_ajqmb")
+
+[node name="Sprite2D" type="Sprite2D" parent="PortaBoss/StaticBody2D" unique_id=1412285403]
+position = Vector2(-1, 0)
+scale = Vector2(1.6875001, 3.0000007)
+texture = ExtResource("5_ajqmb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PortaBoss/StaticBody2D" unique_id=59396965]
-position = Vector2(-78.5, -186)
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_717oy")
 
 [node name="Area2D2" type="Area2D" parent="PortaBoss" unique_id=1705731396]
