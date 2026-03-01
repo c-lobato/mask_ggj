@@ -6,3 +6,5 @@ Consiste em um jogo de plataforma em que o player coleta máscaras que o levam p
 ## Detalhes Técnicos
 
 Desenvolvido na Game Engine Godot (v4.6) com C# para scripting.
+
+[Link do Jogo no site da GGJ] (https://globalgamejam.org/games/2026/masks-taldea-5)
