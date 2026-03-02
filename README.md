@@ -11,4 +11,4 @@ Desenvolvido na Game Engine Godot (v4.6) com C# para scripting.
 
 Você pode baixar o código do repositório e rodar pela própria Engine ou baixar o .zip do site da GGJ no link abaixo.
 
-[Link do Jogo no site da GGJ] (https://globalgamejam.org/games/2026/masks-taldea-5)
+[Link do Jogo no site da GGJ](https://globalgamejam.org/games/2026/masks-taldea-5)
